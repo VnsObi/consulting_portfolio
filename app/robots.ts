@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: "https://evansobi.com/sitemap.xml", // Assuming your domain or Vercel URL
+    sitemap: "https://evansobi.systems/sitemap.xml",
   };
 }

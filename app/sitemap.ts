@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { getSortedPostsData } from "@/lib/posts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://evansobi.com"; // Replace with your actual domain
+  const baseUrl = "https://evansobi.systems";
 
   // Get all posts for dynamic routes
   const posts = getSortedPostsData();
