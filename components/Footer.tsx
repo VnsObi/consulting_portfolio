@@ -1,7 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Linkedin, Github, Mail, MapPin, Calendar } from "lucide-react";
+import {
+  Linkedin,
+  Github,
+  Mail,
+  MapPin,
+  Calendar,
+  MessageCircle,
+} from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -41,6 +48,15 @@ export default function Footer() {
             >
               <Mail className="w-5 h-5" />
               Send an Email
+            </a>
+            <a
+              href="https://wa.me/2349075717088"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto bg-transparent border border-slate-700 text-white px-8 py-4 rounded-lg hover:bg-slate-800 transition-colors text-lg font-medium flex items-center justify-center gap-2"
+            >
+              <MessageCircle className="w-5 h-5" />
+              Direct Inquiry
             </a>
           </div>
           <p className="mt-6 text-sm text-slate-500">
@@ -90,6 +106,15 @@ export default function Footer() {
                 aria-label="Email"
               >
                 <Mail size={24} />
+              </a>
+              <a
+                href="https://wa.me/2349075717088"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle size={24} />
               </a>
             </div>
           </div>
