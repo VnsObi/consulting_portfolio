@@ -14,11 +14,14 @@ const staggerContainer = {
 
 export default function Hero() {
   const trustedLogos = [
-    "Global NGO",
-    "InfraCorp",
-    "SecureFin",
-    "RegionX Ventures",
-    "AgriTech Systems",
+    "Dustid",
+    "CIUCI International",
+    "AGCare Group",
+    "Edi Hospital",
+    "AGCare Specialist Clinic",
+    "Ameso Specialist Clinic",
+    "Argus Protocol",
+    "AGCare Healthtech",
   ];
 
   return (
@@ -61,9 +64,16 @@ export default function Hero() {
               variants={fadeUp}
               className="text-lg md:text-xl text-slate-600 max-w-3xl leading-relaxed mb-10"
             >
-              I help small and medium organizations design, secure, and scale
-              reliable technology systems — with deep understanding of local
-              realities and global delivery standards.
+              I am an{" "}
+              <strong className="font-bold text-deep-slate">
+                IT Manager & Enterprise Consultant
+              </strong>
+              . I help{" "}
+              <strong className="font-bold text-deep-slate">
+                operation-heavy businesses
+              </strong>{" "}
+              design, secure, and scale reliable technology systems — replacing
+              manual chaos with automated, profit-generating infrastructure.
             </motion.p>
 
             <motion.div
