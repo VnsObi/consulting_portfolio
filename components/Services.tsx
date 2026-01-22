@@ -11,9 +11,9 @@ export default function Services() {
       subtitle: "SMOs / SMEs",
       description: "Essential technology setup for growing businesses",
       features: [
-        "Digital Presence Architecture",
+        "High-Performance Websites",
+        "Web Platforms & Apps",
         "Revenue Operations Setup",
-        "Operational Workflows",
         "Technical Consultation",
         "Performance Optimization",
       ],
@@ -24,9 +24,9 @@ export default function Services() {
       subtitle: "Business Automation",
       description: "Tailored internal tools and workflows",
       features: [
-        "Internal tools",
+        "Custom Software Development",
+        "Web & Mobile Applications",
         "Dashboards & analytics",
-        "Business automation",
         "API integrations",
         "Data workflows",
       ],

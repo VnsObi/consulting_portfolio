@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -91,10 +91,13 @@ export default function Hero() {
                 />
               </a>
               <a
-                href="#case-studies"
-                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-slate-300 text-deep-slate text-lg font-semibold rounded-lg hover:border-slate-800 hover:bg-slate-50 transition-colors duration-300"
+                href="https://wa.me/2349075717088"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-slate-300 text-deep-slate text-lg font-semibold rounded-lg hover:border-green-600 hover:text-green-700 hover:bg-green-50 transition-all duration-300 gap-2"
               >
-                Read Case Studies
+                <MessageCircle size={20} />
+                Direct Inquiry
               </a>
             </motion.div>
           </motion.div>
