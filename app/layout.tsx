@@ -60,7 +60,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name": "Evans Obi | Enterprise IT Consultant",
+  name: "Evans Obi | Enterprise IT Consultant",
   image: "https://evansobi.systems/opengraph-image.png",
   url: "https://evansobi.systems",
   telephone: "+2349075717088",
@@ -76,12 +76,12 @@ const jsonLd = {
     longitude: 6.6959,
   },
   areaServed: [
-    { "@type": "City", "name": "Asaba" },
-    { "@type": "City", "name": "Warri" },
-    { "@type": "City", "name": "Lagos" },
-    { "@type": "City", "name": "Port Harcourt" },
-    { "@type": "Country", "name": "Nigeria" },
-    { "@type": "Subcontinent", "name": "West Africa" },
+    { "@type": "City", name: "Asaba" },
+    { "@type": "City", name: "Warri" },
+    { "@type": "City", name: "Lagos" },
+    { "@type": "City", name: "Port Harcourt" },
+    { "@type": "Country", name: "Nigeria" },
+    { "@type": "Subcontinent", name: "West Africa" },
     "Worldwide",
   ],
   hasOfferCatalog: {
