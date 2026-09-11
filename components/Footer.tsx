@@ -6,10 +6,9 @@ import {
   Github,
   Mail,
   MapPin,
-  Calendar,
   MessageCircle,
 } from "lucide-react";
-import Link from "next/link";
+import { contact, profile } from "@/lib/content";
 
 export default function Footer() {
   return (
@@ -22,45 +21,58 @@ export default function Footer() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-center mb-20"
+          className="max-w-3xl mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-semibold text-white mb-6 tracking-tight">
-            Ready to build systems that actually work?
+          <h2 className="text-3xl md:text-5xl font-semibold text-white mb-8 tracking-tight">
+            {contact.heading}
           </h2>
-          <p className="text-slate-400 text-lg mb-10 max-w-2xl mx-auto">
-            Book a free 15-minute audit of your current operational stacks. No
-            sales pitch—just clarity on your next technical move.
-          </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="https://calendly.com/vnsobi/consulting"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto bg-white text-slate-900 px-8 py-4 rounded-lg hover:bg-slate-100 transition-colors text-lg font-bold flex items-center justify-center gap-2 group"
+          {contact.paragraphs.map((paragraph, index) => (
+            <p
+              key={index}
+              className="text-slate-300 text-lg mb-5 leading-relaxed"
             >
-              <Calendar className="w-5 h-5 group-hover:-translate-y-0.5 transition-transform" />
-              Book Systems Audit
-            </a>
+              {paragraph}
+            </p>
+          ))}
+
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4 mt-10">
             <a
-              href="mailto:vnsobi@gmail.com"
-              className="w-full sm:w-auto bg-transparent border border-slate-700 text-white px-8 py-4 rounded-lg hover:bg-slate-800 transition-colors text-lg font-medium flex items-center justify-center gap-2"
+              href={`mailto:${profile.email}`}
+              className="bg-white text-slate-900 px-7 py-4 rounded-lg hover:bg-slate-100 transition-colors text-base font-bold flex items-center justify-center gap-2"
             >
               <Mail className="w-5 h-5" />
               Send an Email
             </a>
             <a
-              href="https://wa.me/2349075717088"
+              href={profile.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto bg-transparent border border-slate-700 text-white px-8 py-4 rounded-lg hover:bg-slate-800 transition-colors text-lg font-medium flex items-center justify-center gap-2"
+              className="bg-transparent border border-slate-700 text-white px-7 py-4 rounded-lg hover:bg-slate-800 transition-colors text-base font-medium flex items-center justify-center gap-2"
             >
-              <MessageCircle className="w-5 h-5" />
-              Direct Inquiry
+              <Linkedin className="w-5 h-5" />
+              Connect on LinkedIn
+            </a>
+            <a
+              href={profile.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-transparent border border-slate-700 text-white px-7 py-4 rounded-lg hover:bg-slate-800 transition-colors text-base font-medium flex items-center justify-center gap-2"
+            >
+              <Github className="w-5 h-5" />
+              View GitHub
             </a>
           </div>
-          <p className="mt-6 text-sm text-slate-500">
-            Typical response time: Under 24 hours.
+
+          <p className="mt-8 text-sm text-slate-400">
+            <a
+              href={`mailto:${profile.email}`}
+              className="font-medium text-slate-300 hover:text-white transition-colors"
+            >
+              {profile.email}
+            </a>
+            <span className="mx-2 text-slate-600">·</span>
+            Typical response time: under 24 hours.
           </p>
         </motion.div>
 
@@ -72,47 +84,43 @@ export default function Footer() {
           className="border-t border-slate-700 pt-12"
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-slate-400">
-            {/* Location Signal */}
-            <div className="flex items-center gap-2">
-              <MapPin size={20} />
-              <span className="text-sm font-medium">
-                Based in Nigeria · Serving clients globally
-              </span>
+            <div className="flex items-center gap-2 text-center md:text-left">
+              <MapPin size={20} className="shrink-0" />
+              <span className="text-sm font-medium">{profile.location}</span>
             </div>
 
-            {/* Social Links */}
             <div className="flex items-center gap-6">
               <a
-                href="https://www.linkedin.com/in/evans-obi-670366148/"
+                href={profile.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white transition-colors"
-                aria-label="LinkedIn"
+                aria-label="Evans Obi on LinkedIn"
               >
                 <Linkedin size={24} />
               </a>
               <a
-                href="https://github.com/VnsObi"
+                href={profile.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white transition-colors"
-                aria-label="GitHub"
+                aria-label="Evans Obi on GitHub"
               >
                 <Github size={24} />
               </a>
               <a
-                href="mailto:vnsobi@gmail.com"
+                href={`mailto:${profile.email}`}
                 className="hover:text-white transition-colors"
-                aria-label="Email"
+                aria-label="Email Evans Obi"
               >
                 <Mail size={24} />
               </a>
               <a
-                href="https://wa.me/2349075717088"
+                href={profile.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white transition-colors"
-                aria-label="WhatsApp"
+                aria-label="Message Evans Obi on WhatsApp"
               >
                 <MessageCircle size={24} />
               </a>

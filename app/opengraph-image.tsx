@@ -2,7 +2,8 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
-export const alt = "Evans Obi - Executive Technology Strategy";
+export const alt =
+  "Evans Obi — Technology Leadership & Full-Stack Product Delivery";
 export const size = {
   width: 1200,
   height: 630,
@@ -14,37 +15,50 @@ export default async function Image() {
     (
       <div
         style={{
-          fontSize: 64,
           background: "#0F172A",
           width: "100%",
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
           justifyContent: "center",
           color: "white",
           fontFamily: "sans-serif",
-          fontWeight: 700,
-          textAlign: "center",
-          padding: "40px",
+          padding: "80px",
         }}
       >
         <div
           style={{
-            fontSize: 32,
-            marginBottom: 20,
-            opacity: 0.8,
+            fontSize: 28,
+            marginBottom: 32,
+            opacity: 0.65,
             textTransform: "uppercase",
             letterSpacing: "4px",
+            fontWeight: 600,
           }}
         >
-          Consulting
+          Evans Obi
         </div>
-        <div style={{ lineHeight: 1.1 }}>Evans Obi</div>
         <div
-          style={{ fontSize: 24, marginTop: 40, opacity: 0.6, fontWeight: 400 }}
+          style={{
+            fontSize: 68,
+            lineHeight: 1.15,
+            fontWeight: 700,
+            display: "flex",
+            flexDirection: "column",
+          }}
         >
-          Technology Strategy for Growing Organizations
+          <span>Technology Leadership &amp;</span>
+          <span>Full-Stack Product Delivery</span>
+        </div>
+        <div
+          style={{
+            fontSize: 26,
+            marginTop: 48,
+            opacity: 0.6,
+            fontWeight: 400,
+          }}
+        >
+          Product architecture · Backend · Cloud · Security · AI systems
         </div>
       </div>
     ),

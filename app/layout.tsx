@@ -12,108 +12,82 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const description =
+  "I lead technical teams and build web, mobile, cloud, and AI-powered products — covering product architecture, backend systems, infrastructure, security, and delivery. Founder & CTO at VNSIS Technologies, building HealthOS.";
+
 export const metadata: Metadata = {
-  title: "Evans Obi | Enterprise IT Consultant & Systems Architect",
-  description:
-    "Enterprise IT Consultant helping operation-heavy businesses in Nigeria, West Africa, and globally. I replace manual chaos with automated, profit-generating systems. Based in Asaba, Delta State.",
+  metadataBase: new URL("https://evansobi.systems"),
+  title: "Evans Obi | Technology Leadership & Full-Stack Product Delivery",
+  description,
   keywords: [
-    "Enterprise Consultant Nigeria",
-    "IT Manager Asaba",
-    "Technology Strategy Delta State",
-    "Systems Architect West Africa",
-    "Business Process Automation",
-    "Digital Transformation Consultant",
     "Evans Obi",
-    "Tech Consultant South South Nigeria",
-    "Remote IT Manager",
-    // Dev Keywords
-    "Web Developer Asaba",
-    "Software Engineer Nigeria",
-    "Website Designer Delta State",
-    "Custom Software Development",
-    "Mobile App Developer Nigeria",
-    "Full Stack Developer West Africa",
+    "Full Stack Developer",
+    "Technical Product Engineer",
+    "Founding Engineer",
+    "Engineering Lead",
+    "Fractional CTO",
+    "Technical Leadership",
+    "Flutter Developer",
+    "TypeScript",
+    "Node.js",
+    "Python",
+    "AI Agents",
+    "Retrieval-Augmented Generation",
+    "Model Context Protocol",
+    "Offline-first Applications",
+    "Cloud Infrastructure",
+    "Security Engineering",
+    "HealthOS",
+    "VNSIS Technologies",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Evans Obi | Enterprise IT Consultant & Systems Architect",
-    description:
-      "Enterprise IT Consultant helping operation-heavy businesses design, secure, and scale reliable technology systems. Serving Nigeria, West Africa, and Global clients.",
-    type: "website",
+    title: "Evans Obi | Technology Leadership & Full-Stack Product Delivery",
+    description,
+    type: "profile",
     locale: "en_US",
     siteName: "Evans Obi",
     url: "https://evansobi.systems",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Evans Obi | Enterprise IT Consultant",
-    description:
-      "Helping operation-heavy businesses scale with reliable technology systems.",
-  },
-  other: {
-    "geo.region": "NG-DE", // Delta State
-    "geo.placename": "Asaba",
-    "geo.position": "6.2059;6.6959", // Coordinates for Asaba roughly
-    ICBM: "6.2059, 6.6959",
+    title: "Evans Obi | Technology Leadership & Full-Stack Product Delivery",
+    description,
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: "Evans Obi | Enterprise IT Consultant",
-  image: "https://evansobi.systems/opengraph-image.png",
+  "@type": "Person",
+  name: "Evans Obi",
   url: "https://evansobi.systems",
-  telephone: "+2349075717088",
+  image: "https://evansobi.systems/opengraph-image.png",
+  email: "mailto:evans.obi@vnsis.com",
+  jobTitle: "Founder & CTO",
+  description,
+  worksFor: {
+    "@type": "Organization",
+    name: "VNSIS Technologies Limited",
+  },
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Asaba",
-    addressRegion: "Delta",
     addressCountry: "NG",
   },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 6.2059,
-    longitude: 6.6959,
-  },
-  areaServed: [
-    { "@type": "City", name: "Asaba" },
-    { "@type": "City", name: "Warri" },
-    { "@type": "City", name: "Lagos" },
-    { "@type": "City", name: "Port Harcourt" },
-    { "@type": "Country", name: "Nigeria" },
-    { "@type": "Subcontinent", name: "West Africa" },
-    "Worldwide",
+  sameAs: [
+    "https://www.linkedin.com/in/evans-obi-670366148/",
+    "https://github.com/VnsObi",
   ],
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "IT Services",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Enterprise IT Consulting",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Web Development & Design",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Custom Software Development",
-        },
-      },
-    ],
-  },
-  priceRange: "$$$",
-  description:
-    "Enterprise IT Consultant helping operation-heavy businesses design, secure, and scale reliable technology systems.",
+  knowsAbout: [
+    "Full-stack product development",
+    "Technical leadership",
+    "AI agent systems",
+    "Retrieval-augmented generation",
+    "Cloud infrastructure",
+    "Security engineering",
+    "Offline-first architecture",
+  ],
 };
 
 export default function RootLayout({

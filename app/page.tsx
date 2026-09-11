@@ -1,8 +1,10 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import ValueProp from "@/components/ValueProp";
-import CaseStudies from "@/components/CaseStudies";
-import Services from "@/components/Services";
+import About from "@/components/About";
+import SelectedWork from "@/components/SelectedWork";
+import Experience from "@/components/Experience";
+import Capabilities from "@/components/Capabilities";
+import Contribute from "@/components/Contribute";
 import Insights from "@/components/Insights";
 import Footer from "@/components/Footer";
 import { getSortedPostsData } from "@/lib/posts";
@@ -16,9 +18,11 @@ export default function Home() {
       <Navbar />
       <main className="flex-grow">
         <Hero />
-        <ValueProp />
-        <CaseStudies />
-        <Services />
+        <About />
+        <SelectedWork />
+        <Experience />
+        <Capabilities />
+        <Contribute />
         <Insights posts={recentPosts} />
       </main>
       <Footer />
