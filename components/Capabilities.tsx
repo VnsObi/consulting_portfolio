@@ -26,16 +26,34 @@ export default function Capabilities() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: (index % 3) * 0.08, duration: 0.4 }}
-              className="bg-white p-8 rounded-2xl border border-slate-200"
+              className={
+                capability.lead
+                  ? "md:col-span-2 lg:col-span-3 bg-deep-slate p-8 md:p-10 rounded-2xl"
+                  : "bg-white p-8 rounded-2xl border border-slate-200"
+              }
             >
               <span
                 aria-hidden="true"
-                className="block w-10 h-1 rounded-full bg-midnight-blue mb-6"
+                className={`block w-10 h-1 rounded-full mb-6 ${
+                  capability.lead ? "bg-white/40" : "bg-midnight-blue"
+                }`}
               />
-              <h3 className="text-xl font-bold text-deep-slate mb-3 leading-snug">
+              <h3
+                className={`font-bold mb-3 leading-snug ${
+                  capability.lead
+                    ? "text-2xl md:text-3xl text-white"
+                    : "text-xl text-deep-slate"
+                }`}
+              >
                 {capability.title}
               </h3>
-              <p className="text-base text-slate-700 leading-relaxed">
+              <p
+                className={`leading-relaxed ${
+                  capability.lead
+                    ? "text-lg text-slate-300 max-w-3xl"
+                    : "text-base text-slate-700"
+                }`}
+              >
                 {capability.description}
               </p>
             </motion.div>

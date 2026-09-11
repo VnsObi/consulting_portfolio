@@ -30,21 +30,24 @@ export default function Hero() {
         >
           <motion.h1
             variants={fadeUp}
-            className="text-4xl md:text-6xl font-bold tracking-tight text-deep-slate leading-[1.1] mb-8"
+            className="text-4xl md:text-6xl font-bold tracking-tight text-deep-slate leading-[1.1] mb-5"
           >
-            Technology Leadership &amp;<br className="hidden md:block" />{" "}
-            Full-Stack Product Delivery
+            {hero.title}
           </motion.h1>
 
-          {hero.paragraphs.map((paragraph, index) => (
-            <motion.p
-              key={index}
-              variants={fadeUp}
-              className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-6"
-            >
-              {paragraph}
-            </motion.p>
-          ))}
+          <motion.p
+            variants={fadeUp}
+            className="text-base md:text-lg font-semibold text-midnight-blue tracking-wide mb-8"
+          >
+            {hero.tagline}
+          </motion.p>
+
+          <motion.p
+            variants={fadeUp}
+            className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
+          >
+            {hero.description}
+          </motion.p>
 
           <motion.div
             variants={fadeUp}
@@ -79,12 +82,21 @@ export default function Hero() {
             </a>
           </motion.div>
 
-          <motion.p
+          <motion.ul
             variants={fadeUp}
-            className="mt-8 text-sm font-medium text-slate-500"
+            className="mt-10 flex flex-wrap justify-center items-center gap-x-3 gap-y-2 text-sm font-medium text-slate-500"
           >
-            {profile.location}
-          </motion.p>
+            {hero.meta.map((item, index) => (
+              <li key={item} className="flex items-center gap-3">
+                {index > 0 && (
+                  <span aria-hidden="true" className="text-slate-300">
+                    ·
+                  </span>
+                )}
+                {item}
+              </li>
+            ))}
+          </motion.ul>
         </motion.div>
 
         {/* Organisations worked with */}

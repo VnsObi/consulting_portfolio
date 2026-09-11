@@ -21,10 +21,15 @@ export const navLinks = [
 ];
 
 export const hero = {
-  title: "Technology Leadership & Full-Stack Product Delivery",
-  paragraphs: [
-    "I lead technical teams and build web, mobile, cloud, and AI-powered products. My work covers product architecture, backend systems, infrastructure, security, engineering oversight, and delivery—from the first technical decision to production.",
-    "I currently lead VNSIS Technologies, where I am building HealthOS, an offline-first healthcare operations platform. I have also served as CTO at Dustid and delivered products involving AI agents, browser extensions, workflow automation, and blockchain infrastructure.",
+  title: "Technical Architect & Engineering Leader",
+  tagline: "Systems · Infrastructure · Security",
+  description:
+    "I design, build, and lead production systems across software, infrastructure, security, and AI. My work spans architecture, technical leadership, product delivery, and hands-on implementation — from the first technical decision to production.",
+  meta: [
+    "Founder & CTO at VNSIS Technologies",
+    "Former CTO at Dustid",
+    "Based in Nigeria",
+    "Available for remote and international opportunities",
   ],
 };
 
@@ -43,27 +48,30 @@ export const organisations = [
 export const about = {
   heading: "About Me",
   paragraphs: [
-    "I'm Evans Obi, a technology leader and product builder with experience across software delivery, IT operations, cloud infrastructure, cybersecurity, and engineering management.",
-    "My background did not begin as a conventional full-stack developer working on application code every day. I grew through infrastructure, security, enterprise IT, and technical leadership, and later moved deeper into product architecture and software delivery.",
+    "I'm Evans Obi, a technical architect and engineering leader with experience across systems design, software delivery, IT operations, cloud infrastructure, cybersecurity, and engineering management.",
+    "My background grew from infrastructure, cybersecurity, and enterprise IT into technical leadership, product architecture, and hands-on software delivery.",
     "I have led cross-functional teams, translated business requirements into technical plans, reviewed architecture and implementation decisions, coordinated frontend, backend, QA, design, and security work, and contributed directly to the development and deployment of production systems.",
-    "Today, I work across product strategy and hands-on technical execution, particularly in healthcare technology, AI-agent systems, cloud services, workflow automation, and offline-first applications.",
+    "Today, I work across system architecture and hands-on technical execution, particularly in healthcare technology, AI-agent systems, cloud services, workflow automation, and offline-first applications.",
   ],
   experienceNote:
-    "Over seven years of combined experience across technology operations, infrastructure, cybersecurity, technical leadership, and software product delivery.",
+    "Over eight years of combined experience across technology operations, infrastructure, cybersecurity, technical leadership, and software product delivery.",
 };
 
 export interface Project {
   id: string;
   title: string;
   summary: string[];
-  /** Labelled prose blocks: role, contribution, responsibilities. */
+  /** Labelled prose blocks: role, architecture, contribution. */
   blocks?: { label: string; body?: string; items?: string[] }[];
   technicalFocus?: string[];
   status?: string;
   tags: string[];
   /** Screenshots. Only populated where real assets exist. */
   gallery?: { src: string; alt: string; label: string; caption: string }[];
-  /** Renders a visible "details still to be added" note. */
+  /**
+   * Renders a visible "details still to be added" note. Leave undefined to
+   * hide the placeholder rather than expose unfinished content publicly.
+   */
   pending?: string[];
   note?: string;
 }
@@ -73,26 +81,28 @@ export const projects: Project[] = [
     id: "healthos",
     title: "HealthOS — Offline-First Healthcare Operations Platform",
     summary: [
-      "HealthOS is a multi-tenant platform being developed by VNSIS Technologies for hospitals and clinics operating in environments where internet access may be slow or unreliable.",
+      "HealthOS is a multi-tenant platform being developed by VNSIS Technologies for hospitals and clinics operating in environments where internet access may be slow or unreliable. A ward cannot stop admitting patients because a link went down, so the system is designed to keep full clinical and billing function with no connection at all.",
       "The platform brings clinical and administrative workflows together, including patient records, consultations, nursing, laboratory, pharmacy, billing, HMO processes, inventory, appointments, and operational reporting.",
     ],
     blocks: [
       {
         label: "My role",
-        body: "Founder and technical product lead. I define the product architecture, workflows, security requirements, infrastructure, implementation priorities, and release direction. I also contribute to development, testing, deployment, and technical troubleshooting.",
+        body: "Founder and technical architect. I own the architecture end to end — the multi-tenant model, the offline-first data and synchronization strategy, workflow and role separation, the security model, and the infrastructure and deployment design — and I set implementation priorities and release direction. I also contribute directly to development, testing, deployment, and technical troubleshooting.",
       },
     ],
     technicalFocus: [
+      "Multi-tenant client architecture with per-tenant separation",
+      "Offline-first data handling and synchronization strategy",
+      "Local-network hub sync for sites with no internet but a working LAN",
+      "Role-based access control and workflow separation",
       "Flutter-based multi-platform application",
-      "Offline-first data handling and synchronization",
-      "Multi-tenant client architecture",
-      "Role-based access and workflow separation",
       "Backend APIs and database services",
       "Cloud deployment and DNS architecture",
-      "Healthcare billing, HMO, pharmacy, and inventory workflows",
+      "Healthcare billing, HMO, pharmacy, and inventory workflow design",
     ],
     status: "Active development · First pilot client onboarded",
     tags: [
+      "Systems Architecture",
       "Flutter",
       "APIs",
       "PostgreSQL",
@@ -133,28 +143,34 @@ export const projects: Project[] = [
   },
   {
     id: "dustid",
-    title: "Dustid — Product and Engineering Leadership",
+    title: "Dustid — CTO, Engineering Leadership & Architecture",
     summary: [
       "Dustid is a UK technology startup developing an addressless phonebook and digital identity product.",
-      "I joined in a CTO capacity and helped expand the technical operation from a small backend team into a cross-functional product organisation covering backend, frontend, UI/UX, QA, cybersecurity, and project management.",
+      "I joined as CTO and built out the technical function, taking it from a small backend team to a cross-functional product organisation covering backend, frontend, UI/UX, QA, cybersecurity, and project management — and owning the architecture, security, and delivery decisions across it.",
     ],
     blocks: [
       {
-        label: "My role included",
+        label: "My role",
+        body: "I led the technical function: system architecture and design review, the security and access-control model, engineering structure and process, product planning, delivery oversight, and release coordination across a distributed team.",
+      },
+      {
+        label: "Scope of responsibility",
         items: [
-          "Technical and product oversight",
-          "Engineering team structure and coordination",
-          "Recruitment and technical interviews",
-          "Product planning and delivery supervision",
-          "Architecture and security reviews",
-          "Access-control and engineering-process design",
+          "Architecture review and system design decisions",
+          "Security review and access-control design",
+          "Technical and product oversight across the engineering function",
+          "Engineering team structure, process design, and coordination",
+          "Product planning, delivery supervision, and release coordination",
+          "Oversight of product initiatives, including the Chrome extension project",
+          "Technical recruitment and interviewing",
           "Collaboration across engineering, design, QA, and project management",
         ],
       },
     ],
-    note: "I interviewed more than 70 candidates and worked with a distributed team that grew to more than 30 contributors during the engagement.",
+    note: "Technical hiring was one part of the role: I interviewed more than 70 candidates and supported a distributed team that grew past 30 contributors during the engagement.",
     tags: [
       "CTO Leadership",
+      "Architecture",
       "Product Delivery",
       "Distributed Teams",
       "Security",
@@ -165,16 +181,20 @@ export const projects: Project[] = [
     id: "ai-agent",
     title: "AI Research and Decision Agent",
     summary: [
-      "I delivered an AI-assisted research system for a blockchain-based decision and truth-market product. The agent collected and evaluated claims, used retrieval and language-model workflows to interpret evidence, and supported on-chain operations.",
+      "An AI-assisted research system for a blockchain-based decision and truth-market product. The agent collected and evaluated claims, used retrieval and language-model workflows to interpret evidence, and carried the result through to on-chain operations.",
     ],
     blocks: [
       {
-        label: "My contribution covered",
+        label: "My role",
+        body: "I architected and delivered the system end to end — agent orchestration and retrieval design, the language-model workflows, the blockchain integration, and the production hardening and hosting that kept it running after handover.",
+      },
+      {
+        label: "Architecture & contribution",
         items: [
           "System architecture and delivery",
-          "Research-agent workflows",
+          "Research-agent orchestration and workflows",
           "Retrieval-augmented generation",
-          "LLM-based interpretation",
+          "LLM-based interpretation and structured output",
           "Wallet and blockchain interactions",
           "Encrypted rounds and challenge cycles",
           "Batch and multicall operations",
@@ -183,21 +203,27 @@ export const projects: Project[] = [
         ],
       },
     ],
-    tags: ["AI Agents", "RAG", "LLMs", "Python", "Blockchain", "APIs", "Automation"],
+    tags: [
+      "AI Agents",
+      "RAG",
+      "LLMs",
+      "Systems Architecture",
+      "Python",
+      "Blockchain",
+      "Automation",
+    ],
   },
   {
     id: "chrome-extension",
-    title: "Chrome Extension Product Delivery",
+    title: "Chrome Extension — Product & Delivery Leadership",
     summary: [
-      "I led the delivery of a Chrome extension project from requirements and workflow definition through engineering coordination, testing, and release preparation.",
-      "My responsibilities included translating the product requirement into technical tasks, coordinating implementation across contributors, reviewing progress, resolving delivery blockers, and ensuring that the extension behaved correctly within the browser environment and its supporting services.",
+      "I led the delivery of a Chrome extension from requirements and workflow definition through engineering coordination, testing, and release preparation.",
     ],
-    pending: [
-      "Extension name",
-      "Screenshots",
-      "Chrome Web Store link",
-      "Exact stack",
-      "Measurable results",
+    blocks: [
+      {
+        label: "My role",
+        body: "Delivery lead. I translated the product requirement into technical tasks and workflows, coordinated implementation across contributors, reviewed progress, and resolved delivery blockers. A browser extension runs inside someone else's page and against its own backing services, so a large part of the work was verifying that it behaved correctly in the browser environment and against the services it depended on, rather than only in isolation.",
+      },
     ],
     tags: [
       "Chrome Extensions",
@@ -210,21 +236,34 @@ export const projects: Project[] = [
   },
   {
     id: "argus",
-    title: "Argus Protocol — Blockchain Risk Infrastructure",
+    title: "Argus Protocol — Security Architecture & Risk Infrastructure",
     summary: [
-      "Argus Protocol is a security infrastructure project designed to analyse package dependencies and propagate risk across blockchain software relationships.",
-      "My work includes package crawling, dependency modelling, recursive risk propagation, reason tracing, database design, and visual representation of connected packages and their risk states.",
+      "Argus Protocol is security infrastructure for blockchain software supply chains. It analyses package dependencies and propagates risk across the relationships between them, so that a problem in one package is visible in everything that depends on it.",
+    ],
+    blocks: [
+      {
+        label: "My role",
+        body: "I design the data model and risk architecture: how packages and their dependencies are crawled and modelled, how risk propagates recursively across the dependency graph, how each score can be traced back to the reason that produced it, and how the resulting state is stored, served, and visualised.",
+      },
     ],
     technicalFocus: [
-      "Sui blockchain data",
-      "TypeScript and Node.js services",
-      "PostgreSQL and TypeORM",
-      "Dependency graphs",
-      "Recursive risk scoring",
+      "Dependency graph modelling and recursive risk propagation",
+      "Reason tracing, so a score can be explained rather than just reported",
       "Rule-based security analysis",
-      "Graph visualisation",
+      "Package crawling and ingestion services",
+      "PostgreSQL and TypeORM database design",
+      "TypeScript and Node.js backend services",
+      "Sui blockchain data",
+      "Graph visualisation of connected packages and their risk states",
     ],
-    tags: ["TypeScript", "Node.js", "PostgreSQL", "Sui", "Security", "Graph Systems"],
+    tags: [
+      "Security Architecture",
+      "Graph Systems",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Sui",
+    ],
   },
 ];
 
@@ -233,6 +272,7 @@ export interface Role {
   title: string;
   period: string;
   description: string;
+  focus: string[];
 }
 
 export const experience: Role[] = [
@@ -241,23 +281,49 @@ export const experience: Role[] = [
     title: "Founder & CTO",
     period: "2026–Present",
     description:
-      "Building and delivering technology products for healthcare and operationally complex organisations. Current work includes HealthOS, cloud infrastructure, internal business systems, automation, security, and technical consulting.",
+      "Architect and deliver technology products for healthcare and operationally complex organisations, owning system design, infrastructure, and security alongside technical product direction. Current work includes HealthOS, cloud infrastructure, internal business systems, automation, and technical consulting.",
+    focus: [
+      "Systems architecture",
+      "Product engineering",
+      "Cloud & infrastructure",
+      "Security",
+      "Technical product direction",
+    ],
   },
   {
     company: "Dustid",
-    title: "CTO — Fractional/Volunteer Engagement",
+    title: "CTO — Fractional Engagement",
     period: "2025",
     description:
-      "Provided technical leadership for a UK startup, covering engineering structure, recruitment, architecture, security, product delivery, and coordination across a distributed cross-functional team.",
+      "Provided technical leadership for a UK startup: engineering structure and oversight, system architecture, the security model, product delivery, technical hiring, and cross-functional project coordination across a distributed team.",
+    focus: [
+      "Technical leadership",
+      "Architecture",
+      "Engineering oversight",
+      "Product delivery",
+      "Security",
+      "Technical hiring",
+    ],
   },
   {
     company: "CIUCI Consulting / AGCare Assets",
     title: "IT Manager",
     period: "2024–Present",
     description:
-      "Lead day-to-day technology operations across multiple healthcare assets. Responsibilities include infrastructure, security, healthcare software deployment, vendor management, user support, technical planning, and the rollout of systems such as EMR, connectivity, ticketing, and HR platforms.",
+      "Lead technology operations across multiple healthcare sites, covering infrastructure, security, healthcare software deployment, vendor management, technical planning, and user support — including the rollout of EMR, connectivity, ticketing, and HR platforms in business-critical environments.",
+    focus: [
+      "Multi-site infrastructure",
+      "Healthcare systems & EMR",
+      "Technical operations",
+      "Security",
+      "Connectivity",
+      "Vendor management",
+    ],
   },
 ];
+
+export const experienceIntro =
+  "Infrastructure → security → technical operations → CTO and architecture → product and systems leadership.";
 
 export const previousExperience = {
   heading: "Previous Experience",
@@ -265,42 +331,55 @@ export const previousExperience = {
     "Earlier roles included IT operations, cybersecurity, application security, infrastructure delivery, and enterprise technical support.",
 };
 
-export const capabilities = [
+export interface Capability {
+  title: string;
+  description: string;
+  /** The lead capability renders full-width above the rest. */
+  lead?: boolean;
+}
+
+export const capabilities: Capability[] = [
   {
-    title: "Full-Stack Product Development",
+    title: "Systems & Solutions Architecture",
     description:
-      "Building and shipping web and mobile products across frontend, backend, APIs, databases, authentication, integrations, testing, and deployment.",
+      "Designing end-to-end technical systems across software, infrastructure, integrations, security, deployment, data, and operational workflows.",
+    lead: true,
   },
   {
     title: "Technical Leadership",
     description:
-      "Turning product goals into clear engineering plans, coordinating cross-functional teams, reviewing implementation decisions, and keeping delivery moving.",
+      "Turning product and business goals into technical plans, coordinating engineering disciplines, reviewing technical decisions, and driving delivery.",
+  },
+  {
+    title: "Product Engineering",
+    description:
+      "Building and shipping web, mobile, backend, API, database, integration, and AI-enabled products.",
+  },
+  {
+    title: "Cloud & Infrastructure",
+    description:
+      "Designing, deploying, and operating Linux, containers, VPS and cloud services, databases, DNS, CI/CD, reverse proxies, monitoring, and production environments.",
+  },
+  {
+    title: "Security Engineering",
+    description:
+      "Embedding security architecture, access control, secrets management, vulnerability assessment, application security, and operational controls into systems.",
   },
   {
     title: "AI & Agent Systems",
     description:
-      "Developing systems that combine LLMs, retrieval workflows, tool use, structured reasoning, automation, and external data sources.",
+      "Building AI-enabled workflows using LLMs, RAG, tool use, structured outputs, automation, agent systems, and external integrations.",
   },
   {
     title: "MCP & Tool Integration",
     description:
       "Working with Model Context Protocol concepts and tool-connected AI systems that can retrieve context, call services, and perform controlled actions.",
   },
-  {
-    title: "Cloud & Infrastructure",
-    description:
-      "Deploying and operating applications using Linux servers, containers, databases, DNS, reverse proxies, CI/CD services, and cloud platforms.",
-  },
-  {
-    title: "Security Engineering",
-    description:
-      "Applying secure architecture, access control, secrets management, vulnerability assessment, and practical security controls throughout the product lifecycle.",
-  },
 ];
 
 export const toolkit = [
   {
-    group: "Product Development",
+    group: "Application & Product",
     items: [
       "Flutter",
       "TypeScript",
@@ -309,7 +388,7 @@ export const toolkit = [
       "REST APIs",
       "PostgreSQL",
       "TypeORM",
-      "Web and mobile application architecture",
+      "Web & mobile architecture",
     ],
   },
   {
@@ -317,23 +396,23 @@ export const toolkit = [
     items: [
       "LLM integrations",
       "AI agents",
-      "Retrieval-augmented generation",
-      "MCP concepts and tool integration",
+      "RAG",
+      "MCP",
       "Structured outputs",
       "Workflow automation",
     ],
   },
   {
-    group: "Cloud & Infrastructure",
+    group: "Infrastructure",
     items: [
       "Linux",
       "Docker",
-      "VPS administration",
+      "VPS",
       "Cloudflare",
       "Vercel",
-      "DNS and domain management",
-      "Application deployment",
-      "Monitoring and troubleshooting",
+      "DNS",
+      "Deployment",
+      "Monitoring",
     ],
   },
   {
@@ -344,18 +423,19 @@ export const toolkit = [
       "Secrets management",
       "Vulnerability assessment",
       "Security architecture",
-      "ISO 27001 and NIST CSF familiarity",
+      "ISO 27001 familiarity",
+      "NIST CSF familiarity",
     ],
   },
   {
     group: "Leadership & Delivery",
     items: [
+      "Architecture review",
       "Technical roadmaps",
       "Requirements analysis",
-      "Architecture review",
-      "Cross-functional team leadership",
+      "Engineering coordination",
       "Technical recruitment",
-      "QA coordination",
+      "QA",
       "Production delivery",
     ],
   },
@@ -363,26 +443,31 @@ export const toolkit = [
 
 export const contribute = [
   {
-    title: "Product Engineering",
+    title: "Systems Architecture",
     description:
-      "I help build and improve web, mobile, backend, and AI-enabled products, with attention to how the entire system behaves in production.",
+      "I design practical end-to-end systems across software, infrastructure, security, data, integrations, and deployment.",
   },
   {
     title: "Technical Leadership",
     description:
-      "I can lead delivery, coordinate engineering disciplines, review technical decisions, and create the structure needed to move a product forward.",
+      "I lead technical delivery, coordinate engineering disciplines, review architecture and implementation decisions, and help teams move from ambiguity to execution.",
   },
   {
-    title: "Architecture & Infrastructure",
+    title: "Product Engineering",
     description:
-      "I design practical application and deployment architectures for organisations that need reliability, security, and room to grow.",
+      "I build and improve web, mobile, backend, AI-enabled, and operational products, with attention to how the entire system behaves in production.",
+  },
+  {
+    title: "Infrastructure & Security",
+    description:
+      "I design and improve production infrastructure with reliability, access control, observability, security, and operational resilience in mind.",
   },
 ];
 
 export const contact = {
   heading: "Let's Work Together",
   paragraphs: [
-    "I'm open to full-stack development, technical product, engineering leadership, fractional CTO, and selected consulting opportunities.",
-    "If you are building a serious product and need someone who can connect the code, infrastructure, security, team, and business requirements, I would be glad to hear from you.",
+    "I'm open to technical architecture, systems and solutions architecture, technical leadership, product engineering, fractional CTO, and selected hands-on software opportunities.",
+    "If you're building a serious product or technical platform and need someone who can connect architecture, code, infrastructure, security, delivery, and business requirements, I'd be glad to hear from you.",
   ],
 };

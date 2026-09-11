@@ -2,8 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
-export const alt =
-  "Evans Obi — Technology Leadership & Full-Stack Product Delivery";
+export const alt = "Evans Obi — Technical Architect & Engineering Leader";
 export const size = {
   width: 1200,
   height: 630,
@@ -47,8 +46,8 @@ export default async function Image() {
             flexDirection: "column",
           }}
         >
-          <span>Technology Leadership &amp;</span>
-          <span>Full-Stack Product Delivery</span>
+          <span>Technical Architect &amp;</span>
+          <span>Engineering Leader</span>
         </div>
         <div
           style={{
@@ -58,7 +57,7 @@ export default async function Image() {
             fontWeight: 400,
           }}
         >
-          Product architecture · Backend · Cloud · Security · AI systems
+          Systems · Infrastructure · Security · Product
         </div>
       </div>
     ),

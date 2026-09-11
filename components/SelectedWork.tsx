@@ -143,7 +143,7 @@ function ProjectEntry({ project, index }: { project: Project; index: number }) {
           {project.technicalFocus && (
             <div>
               <h4 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-3">
-                Technical focus
+                Architecture &amp; technical focus
               </h4>
               <ul className="space-y-2">
                 {project.technicalFocus.map((item) => (
@@ -203,12 +203,13 @@ export default function SelectedWork() {
           viewport={{ once: true }}
           className="max-w-3xl mb-6"
         >
-          <h2 className="text-3xl md:text-4xl font-semibold text-deep-slate mb-4">
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-deep-slate mb-5">
             Selected Work
           </h2>
-          <p className="text-lg text-slate-600 leading-relaxed">
-            A selection of products and technical initiatives I have led, built,
-            or helped deliver.
+          <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
+            Systems I have architected, built, or led to production. Each entry
+            shows the problem, the architecture, and what I was actually
+            responsible for.
           </p>
         </motion.div>
 

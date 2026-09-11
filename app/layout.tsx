@@ -12,31 +12,35 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const title = "Evans Obi | Technical Architect & Engineering Leader";
+
 const description =
-  "I lead technical teams and build web, mobile, cloud, and AI-powered products — covering product architecture, backend systems, infrastructure, security, and delivery. Founder & CTO at VNSIS Technologies, building HealthOS.";
+  "I design, build, and lead production systems across software, infrastructure, security, and AI — architecture, technical leadership, product delivery, and hands-on implementation. Founder & CTO at VNSIS Technologies, building HealthOS.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://evansobi.systems"),
-  title: "Evans Obi | Technology Leadership & Full-Stack Product Delivery",
+  title,
   description,
   keywords: [
     "Evans Obi",
-    "Full Stack Developer",
-    "Technical Product Engineer",
-    "Founding Engineer",
-    "Engineering Lead",
+    "Technical Architect",
+    "Systems Architect",
+    "Solutions Architect",
+    "Engineering Leader",
+    "Engineering Manager",
     "Fractional CTO",
     "Technical Leadership",
-    "Flutter Developer",
-    "TypeScript",
-    "Node.js",
-    "Python",
+    "Product Engineering",
+    "Cloud Infrastructure",
+    "Security Engineering",
     "AI Agents",
     "Retrieval-Augmented Generation",
     "Model Context Protocol",
-    "Offline-first Applications",
-    "Cloud Infrastructure",
-    "Security Engineering",
+    "Offline-first Architecture",
+    "Flutter",
+    "TypeScript",
+    "Node.js",
+    "Python",
     "HealthOS",
     "VNSIS Technologies",
   ],
@@ -44,7 +48,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Evans Obi | Technology Leadership & Full-Stack Product Delivery",
+    title,
     description,
     type: "profile",
     locale: "en_US",
@@ -53,7 +57,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Evans Obi | Technology Leadership & Full-Stack Product Delivery",
+    title,
     description,
   },
 };
@@ -65,7 +69,7 @@ const jsonLd = {
   url: "https://evansobi.systems",
   image: "https://evansobi.systems/opengraph-image.png",
   email: "mailto:evans.obi@vnsis.com",
-  jobTitle: "Founder & CTO",
+  jobTitle: "Technical Architect & Engineering Leader",
   description,
   worksFor: {
     "@type": "Organization",
@@ -80,12 +84,13 @@ const jsonLd = {
     "https://github.com/VnsObi",
   ],
   knowsAbout: [
-    "Full-stack product development",
+    "Systems and solutions architecture",
     "Technical leadership",
-    "AI agent systems",
-    "Retrieval-augmented generation",
+    "Product engineering",
     "Cloud infrastructure",
     "Security engineering",
+    "AI agent systems",
+    "Retrieval-augmented generation",
     "Offline-first architecture",
   ],
 };

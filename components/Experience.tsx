@@ -1,20 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { experience, previousExperience } from "@/lib/content";
+import { experience, experienceIntro, previousExperience } from "@/lib/content";
 
 export default function Experience() {
   return (
     <section className="py-24 px-6 bg-white" id="experience">
       <div className="max-w-7xl mx-auto">
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-semibold text-deep-slate mb-14"
+          className="mb-14"
         >
-          Experience
-        </motion.h2>
+          <h2 className="text-3xl md:text-4xl font-semibold text-deep-slate mb-4">
+            Experience
+          </h2>
+          <p className="text-base md:text-lg text-slate-500 font-medium">
+            {experienceIntro}
+          </p>
+        </motion.div>
 
         <div className="border-t border-slate-200">
           {experience.map((role, index) => (
@@ -41,6 +46,16 @@ export default function Experience() {
                 <p className="text-lg text-slate-700 leading-relaxed">
                   {role.description}
                 </p>
+                <ul className="flex flex-wrap gap-2 mt-5">
+                  {role.focus.map((item) => (
+                    <li
+                      key={item}
+                      className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-full"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </motion.article>
           ))}
