@@ -5,9 +5,12 @@ import { getSortedPostsData } from "@/lib/posts";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata = {
-  title: "Insights | Lastname.Consulting",
+  title: "Insights | Evans Obi",
   description:
-    "Perspectives on technology strategy, operations, and resilience.",
+    "Notes on systems architecture, infrastructure, security, and AI — written from production work rather than theory.",
+  alternates: {
+    canonical: "/insights",
+  },
 };
 
 export default function InsightsArchive() {
@@ -33,8 +36,8 @@ export default function InsightsArchive() {
               Insights
             </h1>
             <p className="text-xl text-slate-600 max-w-2xl">
-              In-depth analysis and strategies for building resilient technical
-              operations.
+              Notes on architecture, infrastructure, security, and AI systems —
+              written from work I have actually shipped.
             </p>
           </div>
 
@@ -43,19 +46,33 @@ export default function InsightsArchive() {
               <Link
                 key={post.id}
                 href={`/insights/${post.id}`}
-                className="block p-8 bg-white rounded-xl border border-gray-100 hover:border-gray-300 transition-all hover:shadow-lg h-full flex flex-col"
+                className="group flex flex-col p-8 bg-white rounded-xl border border-slate-200 hover:border-slate-300 transition-all hover:shadow-lg h-full"
               >
-                <div className="flex items-center gap-3 text-sm text-gray-400 mb-4">
+                <div className="flex items-center gap-3 text-sm text-slate-400 mb-4">
                   <time dateTime={post.date}>{post.date}</time>
-                  <span>•</span>
+                  <span aria-hidden="true">•</span>
                   <span>{post.readTime}</span>
                 </div>
-                <h3 className="text-xl font-bold text-deep-slate mb-3 group-hover:text-midnight-blue transition-colors">
+                <h2 className="text-xl font-bold text-deep-slate mb-3 group-hover:text-midnight-blue transition-colors">
                   {post.title}
-                </h3>
+                </h2>
                 <p className="text-slate-600 leading-relaxed mb-6 flex-grow">
                   {post.summary}
                 </p>
+
+                {post.tags && (
+                  <ul className="flex flex-wrap gap-2 mb-5">
+                    {post.tags.map((tag) => (
+                      <li
+                        key={tag}
+                        className="px-2.5 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-full"
+                      >
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
                 <span className="text-midnight-blue font-semibold text-sm group-hover:underline">
                   Read article &rarr;
                 </span>

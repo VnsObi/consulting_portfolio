@@ -6,14 +6,17 @@ import html from "remark-html";
 
 const postsDirectory = path.join(process.cwd(), "_posts");
 
-export interface PostData {
-  id: string;
+export interface Frontmatter {
   title: string;
   date: string;
   summary: string;
   readTime: string;
+  tags?: string[];
+}
+
+export interface PostData extends Frontmatter {
+  id: string;
   contentHtml?: string;
-  [key: string]: any;
 }
 
 export function getSortedPostsData(): PostData[] {
@@ -33,12 +36,7 @@ export function getSortedPostsData(): PostData[] {
     // Combine the data with the id
     return {
       id,
-      ...(matterResult.data as {
-        title: string;
-        date: string;
-        summary: string;
-        readTime: string;
-      }),
+      ...(matterResult.data as Frontmatter),
     };
   });
   // Sort posts by date
@@ -79,11 +77,6 @@ export async function getPostData(id: string): Promise<PostData> {
   return {
     id,
     contentHtml,
-    ...(matterResult.data as {
-      title: string;
-      date: string;
-      summary: string;
-      readTime: string;
-    }),
+    ...(matterResult.data as Frontmatter),
   };
 }

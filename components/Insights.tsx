@@ -57,6 +57,19 @@ export default function Insights({ posts }: InsightsProps) {
                   {post.summary}
                 </p>
 
+                {post.tags && (
+                  <ul className="flex flex-wrap gap-2 mb-5">
+                    {post.tags.map((tag) => (
+                      <li
+                        key={tag}
+                        className="px-2.5 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-full"
+                      >
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
                 <div className="text-midnight-blue font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
                   Read Article <ArrowRight size={16} />
                 </div>
