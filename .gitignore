@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Impeccable product context: local only (the repo is public)
+PRODUCT.md

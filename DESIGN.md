@@ -40,6 +40,7 @@ typography:
     fontWeight: 700
     letterSpacing: "0.05em"
 rounded:
+  xs: "4px"
   sm: "8px"
   md: "12px"
   lg: "16px"
@@ -159,7 +160,7 @@ Flat by default. Depth comes from tonal bands (paper against white) and hairline
 
 ## Shapes
 
-Gently rounded and consistent: 8px (`sm`) on buttons, chips and badges; 12px (`md`) on cards and panels; 16px (`lg`) on large feature surfaces (the lead capability card, the featured article, the article cover); full pills only for small read-only tags. Borders are 1px. Coloured side borders thicker than 1px are not part of this system.
+Gently rounded and consistent: 4px (`xs`) only on the 32px favicon, where it reads like 8px at full size; 8px (`sm`) on buttons, chips and badges; 12px (`md`) on cards and panels; 16px (`lg`) on large feature surfaces (the lead capability card, the featured article, the article cover); full pills only for small read-only tags. Borders are 1px. Coloured side borders thicker than 1px are not part of this system.
 
 ## Components
 

@@ -46,7 +46,7 @@ export default function Hero() {
 
           <motion.p
             variants={rise}
-            className="text-lg md:text-xl text-slate-600 max-w-[60ch] mx-auto leading-relaxed"
+            className="text-lg md:text-[1.375rem] text-slate-700 max-w-[58ch] mx-auto leading-relaxed"
           >
             {hero.description}
           </motion.p>
@@ -86,12 +86,13 @@ export default function Hero() {
 
           <motion.ul
             variants={rise}
-            className="mt-10 flex flex-wrap justify-center items-center gap-x-3 gap-y-2 text-sm font-medium text-slate-500"
+            className="mt-10 flex flex-col sm:flex-row sm:flex-wrap justify-center items-center gap-x-3 gap-y-1.5 sm:gap-y-2 text-sm font-medium text-slate-500"
           >
             {hero.meta.map((item, index) => (
               <li key={item} className="flex items-center gap-3">
                 {index > 0 && (
-                  <span aria-hidden="true" className="text-slate-300">
+                  // Stacked on phones, where a wrapped line would start with a stray dot.
+                  <span aria-hidden="true" className="hidden sm:inline text-slate-300">
                     ·
                   </span>
                 )}
