@@ -10,18 +10,14 @@ function Featured({ card }: { card: Card }) {
   return (
     <Link
       href={`/insights/${card.slug}`}
-      className={`group grid grid-cols-1 bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 transition-colors duration-300 ${
-        card.coverImage ? "lg:grid-cols-2" : ""
-      }`}
+      className="group grid grid-cols-1 lg:grid-cols-2 bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-slate-400 transition-colors duration-300"
     >
-      {card.coverImage && (
-        // Covers are designed at 16:9; keep that ratio so nothing is cropped.
-        <div className="flex items-center bg-deep-slate">
-          <div className="relative aspect-[16/9] w-full">
-            <InsightCover card={card} sizes="(max-width: 1024px) 100vw, 640px" priority />
-          </div>
+      {/* Covers are designed at 16:9; keep that ratio so nothing is cropped. */}
+      <div className="flex items-center bg-deep-slate">
+        <div className="relative aspect-[16/9] w-full">
+          <InsightCover card={card} sizes="(max-width: 1024px) 100vw, 640px" priority />
         </div>
-      )}
+      </div>
       <div className="flex flex-col justify-center p-8 md:p-12">
         <InsightMeta card={card} />
         <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-deep-slate leading-tight text-balance group-hover:text-midnight-blue transition-colors">

@@ -181,7 +181,7 @@
       "name": "Insight Card",
       "kind": "card",
       "refersTo": "card",
-      "description": "Typographic article card: area, date and read time, serif title, summary. No placeholder imagery.",
+      "description": "Article card: 16:9 cover (or the Blueprint Sheet until one exists), area, date and read time, serif title, summary.",
       "html": "<a class=\"ds-card\" href=\"#\"><p class=\"ds-card-area\">Health Technology</p><p class=\"ds-card-meta\">15 July 2026 · 7 min read</p><h3 class=\"ds-card-title\">Multi-tenancy when the tenants are hospitals</h3><p class=\"ds-card-summary\">Three separations get conflated in multi-tenant systems: tenant, role, and workflow.</p><span class=\"ds-card-link\">Read article →</span></a>",
       "css": ".ds-card { display: block; max-width: 360px; padding: 28px; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; text-decoration: none; font-family: 'Source Sans 3', system-ui, sans-serif; transition: border-color .3s; } .ds-card:hover { border-color: #94a3b8; } .ds-card:focus-visible { outline: 2px solid #1e3a8a; outline-offset: 2px; } .ds-card-area { margin: 0; font-size: 14px; font-weight: 600; color: #1e3a8a; } .ds-card-meta { margin: 4px 0 0; font-size: 14px; color: #64748b; } .ds-card-title { margin: 16px 0 0; font: 600 20px/1.35 'Source Serif 4', Georgia, serif; color: #0f172a; } .ds-card-summary { margin: 12px 0 0; color: #475569; line-height: 1.65; } .ds-card-link { display: inline-block; margin-top: 24px; font-size: 14px; font-weight: 600; color: #1e3a8a; }"
     },
@@ -237,12 +237,12 @@
       "Do render content visible on first paint; keep motion to the single hero entrance and respect reduced motion.",
       "Do keep text at 4.5:1 contrast or better; Muted Slate (`text-muted`) is the lightest text allowed on paper.",
       "Do make every interactive target at least 44px.",
-      "Do use real artefacts (screenshots, covers, testimonials) or nothing."
+      "Do use real artefacts (screenshots, covers, testimonials); the Blueprint Sheet is the only stand-in, and only for missing article covers."
     ],
     "donts": [
       "Don't place an eyebrow, kicker, or uppercase label above a heading.",
       "Don't use coloured side borders thicker than 1px on cards, callouts, quotes, or notes.",
-      "Don't use gradients, glows, or decorative colour fills as placeholders for missing imagery.",
+      "Don't use colour gradients, glows, or decorative fills as placeholders; missing covers get the Blueprint Sheet, nothing else.",
       "Don't fade sections in from invisible or give every section the same entrance animation.",
       "Don't use Production Green or Building Amber outside status badges.",
       "Don't set small uppercase labels in the serif."

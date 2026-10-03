@@ -29,6 +29,11 @@ typography:
     fontSize: "1.25rem"
     fontWeight: 600
     lineHeight: 1.35
+  lead:
+    fontFamily: "Source Sans 3, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1.375rem"
+    fontWeight: 400
+    lineHeight: 1.6
   body:
     fontFamily: "Source Sans 3, ui-sans-serif, system-ui, sans-serif"
     fontSize: "1.125rem"
@@ -141,6 +146,7 @@ A near-monochrome ink-on-paper palette with one working accent and two reserved 
 - **Display** (600, 2.25rem → 3.75rem, 1.08): the hero title and page titles only. Balanced wrapping.
 - **Headline** (600, 1.875rem → 2.25rem, 1.2): every section heading, identical in every section. The contact heading is the one sanctioned exception, set larger as the closing statement.
 - **Title** (600, 1.25–1.875rem, 1.35): project, card, capability and role titles.
+- **Lead** (400, 1.375rem, 1.6): the hero's one-sentence positioning statement only, in Body Slate so it holds its weight on laptop screens.
 - **Body** (400, 1.125rem, 1.65): running text, capped at 56–60ch on the homepage and about 75 characters per line in articles (articles set at 1.25rem).
 - **Label** (700, 0.875rem, 0.05em, uppercase): small block labels such as "My role" and Toolkit group names. Always the sans; a serif never appears in small caps.
 
@@ -185,7 +191,7 @@ Refined and restrained: colour shifts and border changes, no lifts, glows, or bo
 - **Shadow Strategy:** none; see Elevation & Depth.
 - **Border:** 1px hairline; hover moves to slate-400.
 - **Internal Padding:** 24–28px.
-- **Insight cards are typographic:** area, date and read time, title, summary. No placeholder imagery.
+- **Insight cards** lead with the article's 16:9 cover. Until a cover is added in Sanity, they show the **Blueprint Sheet**: a Draftsman's Ink panel with a faint 24px white grid (6% opacity) and the research area in the display serif. It is the only sanctioned placeholder.
 
 ### Hover Feedback
 - **Capability cards:** border darkens to slate-400, the short accent bar extends (40px → 64px), the title turns Blueprint Blue. On the dark lead card the accent bar brightens to white.
@@ -216,13 +222,13 @@ Refined and restrained: colour shifts and border changes, no lifts, glows, or bo
 - **Do** render content visible on first paint; keep motion to the single hero entrance and respect reduced motion.
 - **Do** keep text at 4.5:1 contrast or better; Muted Slate (`text-muted`) is the lightest text allowed on paper.
 - **Do** make every interactive target at least 44px.
-- **Do** use real artefacts (screenshots, covers, testimonials) or nothing.
+- **Do** use real artefacts (screenshots, covers, testimonials); the Blueprint Sheet is the only stand-in, and only for missing article covers.
 
 ### Don't:
 
 - **Don't** place an eyebrow, kicker, or uppercase label above a heading.
 - **Don't** use coloured side borders thicker than 1px on cards, callouts, quotes, or notes.
-- **Don't** use gradients, glows, or decorative colour fills as placeholders for missing imagery.
+- **Don't** use colour gradients, glows, or decorative fills as placeholders; missing covers get the Blueprint Sheet, nothing else.
 - **Don't** fade sections in from invisible or give every section the same entrance animation.
 - **Don't** use Production Green or Building Amber outside status badges.
 - **Don't** set small uppercase labels in the serif.
