@@ -68,14 +68,14 @@ function ProjectEntry({ project, index }: { project: Project; index: number }) {
           </span>
           <h3
             id={`project-${project.id}`}
-            className="text-2xl md:text-3xl font-bold text-deep-slate mt-2 mb-6 leading-tight"
+            className="text-2xl md:text-3xl font-semibold text-deep-slate mt-2 mb-6 leading-tight text-balance"
           >
             {project.title}
           </h3>
 
           <div className="space-y-4">
             {project.summary.map((paragraph, i) => (
-              <p key={i} className="text-lg text-slate-700 leading-relaxed max-w-[60ch]">
+              <p key={i} className="text-lg text-slate-700 leading-relaxed max-w-[56ch]">
                 {paragraph}
               </p>
             ))}
@@ -96,7 +96,7 @@ function ProjectEntry({ project, index }: { project: Project; index: number }) {
           )}
 
           {project.note && (
-            <p className="mt-8 text-lg text-deep-slate font-medium leading-relaxed border-l border-midnight-blue pl-5">
+            <p className="mt-8 max-w-[56ch] text-lg text-deep-slate font-medium leading-relaxed border-l border-midnight-blue pl-5">
               {project.note}
             </p>
           )}
@@ -229,7 +229,7 @@ export default function SelectedWork() {
         <div
           className="max-w-3xl mb-6"
         >
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-deep-slate mb-5">
+          <h2 className="text-3xl md:text-4xl font-semibold text-deep-slate mb-5">
             Selected Work
           </h2>
           <p className="text-lg md:text-xl text-slate-600 leading-relaxed">

@@ -145,11 +145,11 @@ const components: PortableTextComponents = {
 export default function ArticleBody({ body }: { body: PortableTextBlock[] }) {
   return (
     <div
-      className="prose prose-lg text-slate-700 max-w-none
-        prose-headings:text-deep-slate prose-headings:font-bold
+      className="prose prose-xl text-slate-700 max-w-none
+        prose-headings:text-deep-slate prose-headings:font-semibold
         prose-a:text-midnight-blue prose-a:font-semibold prose-a:no-underline hover:prose-a:underline
         prose-strong:text-deep-slate
-        prose-code:before:content-none prose-code:after:content-none prose-code:bg-slate-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:font-medium
+        prose-code:before:content-none prose-code:after:content-none prose-code:bg-slate-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:font-medium prose-code:break-words
         prose-blockquote:border-l-0 prose-blockquote:border-y prose-blockquote:border-slate-200 prose-blockquote:px-0 prose-blockquote:py-5 prose-blockquote:not-italic prose-blockquote:font-semibold prose-blockquote:text-deep-slate"
     >
       <PortableText value={body} components={components} />

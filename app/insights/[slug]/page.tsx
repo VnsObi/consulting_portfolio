@@ -67,7 +67,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const sectionHeading = "text-sm font-bold uppercase tracking-wider text-slate-500 mb-4";
+const sectionHeading = "font-sans text-sm font-bold uppercase tracking-wider text-slate-500 mb-4";
 
 export default async function InsightPage({ params }: Props) {
   const { slug } = await params;
@@ -112,7 +112,7 @@ export default async function InsightPage({ params }: Props) {
               All insights
             </Link>
 
-            <h1 className="text-4xl md:text-5xl font-bold text-deep-slate leading-tight text-balance">
+            <h1 className="text-4xl md:text-5xl font-semibold text-deep-slate leading-tight text-balance">
               {insight.title}
             </h1>
 
@@ -195,7 +195,7 @@ export default async function InsightPage({ params }: Props) {
                   {insight.faq.map((item) => (
                     <div key={item.question}>
                       <dt className="text-lg font-semibold text-deep-slate">{item.question}</dt>
-                      <dd className="mt-2 text-slate-700 leading-relaxed">{item.answer}</dd>
+                      <dd className="mt-2 text-lg text-slate-700 leading-relaxed">{item.answer}</dd>
                     </div>
                   ))}
                 </dl>
@@ -226,7 +226,7 @@ export default async function InsightPage({ params }: Props) {
             {insight.references && insight.references.length > 0 && (
               <section className="mt-16 pt-10 border-t border-slate-200">
                 <h2 className={sectionHeading}>References</h2>
-                <ol className="list-decimal pl-5 space-y-2 text-slate-700">
+                <ol className="list-decimal pl-5 space-y-2 text-lg text-slate-700">
                   {insight.references.map((ref) => (
                     <li key={ref.title}>
                       {ref.url ? (

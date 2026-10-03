@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-03T21:00:00Z",
+  "title": "Design System: Evans Obi",
+  "extensions": {
+    "colorMeta": {
+      "draftsmans-ink": {
+        "role": "primary",
+        "displayName": "Draftsman's Ink",
+        "canonical": "#0f172a",
+        "tonalRamp": [
+          "#020617",
+          "#0f172a",
+          "#1e293b",
+          "#334155",
+          "#475569",
+          "#64748b",
+          "#94a3b8",
+          "#cbd5e1"
+        ]
+      },
+      "blueprint-blue": {
+        "role": "secondary",
+        "displayName": "Blueprint Blue",
+        "canonical": "#1e3a8a",
+        "tonalRamp": [
+          "#172554",
+          "#1e3a8a",
+          "#1e40af",
+          "#1d4ed8",
+          "#2563eb",
+          "#3b82f6",
+          "#93c5fd",
+          "#dbeafe"
+        ]
+      },
+      "production-green": {
+        "role": "tertiary",
+        "displayName": "Production Green",
+        "canonical": "#064e3b",
+        "tonalRamp": [
+          "#022c22",
+          "#064e3b",
+          "#065f46",
+          "#047857",
+          "#059669",
+          "#10b981",
+          "#a7f3d0",
+          "#ecfdf5"
+        ]
+      },
+      "status-building": {
+        "role": "tertiary",
+        "displayName": "Building Amber",
+        "canonical": "#92400e",
+        "tonalRamp": [
+          "#451a03",
+          "#78350f",
+          "#92400e",
+          "#b45309",
+          "#d97706",
+          "#f59e0b",
+          "#fcd34d",
+          "#fffbeb"
+        ]
+      },
+      "folio-paper": {
+        "role": "neutral",
+        "displayName": "Folio Paper",
+        "canonical": "#f9fafb"
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface White",
+        "canonical": "#ffffff"
+      },
+      "text-body": {
+        "role": "neutral",
+        "displayName": "Body Slate",
+        "canonical": "#334155"
+      },
+      "text-muted": {
+        "role": "neutral",
+        "displayName": "Muted Slate",
+        "canonical": "#64748b"
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#e2e8f0"
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "canonical": "#cbd5e1"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero title and page titles only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Every section heading, identical across sections."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Project, card, capability and role titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text; 56-60ch on the homepage, about 75 characters in articles."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Small uppercase block labels; always the sans."
+      }
+    },
+    "shadows": [
+      {
+        "name": "floating",
+        "value": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+        "purpose": "Only for elements that truly float: back-to-top button, open mobile menu."
+      }
+    ],
+    "motion": [
+      {
+        "name": "hero-rise",
+        "value": "translateY(12px) to 0, 700ms cubic-bezier(0.16, 1, 0.3, 1), 80ms stagger",
+        "purpose": "The single authored entrance; content is visible from first paint."
+      },
+      {
+        "name": "state-change",
+        "value": "300ms ease",
+        "purpose": "Border and colour shifts on hover."
+      },
+      {
+        "name": "rule-sweep",
+        "value": "scaleX(0) to scaleX(1) from the left, 500ms ease-out",
+        "purpose": "Contribution items: a blue rule sweeps over the ink rule on hover."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single most important action in a group.",
+      "html": "<button class=\"ds-btn-primary\">View Selected Work</button>",
+      "css": ".ds-btn-primary { background: #0f172a; color: #fff; padding: 16px 28px; border: none; border-radius: 8px; font: 600 16px 'Source Sans 3', system-ui, sans-serif; cursor: pointer; transition: background .3s; } .ds-btn-primary:hover { background: #1e293b; } .ds-btn-primary:focus-visible { outline: 2px solid #1e3a8a; outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Supporting actions beside a primary button.",
+      "html": "<button class=\"ds-btn-secondary\">View GitHub</button>",
+      "css": ".ds-btn-secondary { background: #fff; color: #0f172a; padding: 16px 28px; border: 1px solid #cbd5e1; border-radius: 8px; font: 600 16px 'Source Sans 3', system-ui, sans-serif; cursor: pointer; transition: border-color .3s, background .3s; } .ds-btn-secondary:hover { border-color: #94a3b8; background: #f8fafc; } .ds-btn-secondary:focus-visible { outline: 2px solid #1e3a8a; outline-offset: 2px; }"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "chip-filter",
+      "description": "Research-area filter on the Insights index; selected state inverts to ink.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip\" aria-pressed=\"true\">All</button><button class=\"ds-chip\" aria-pressed=\"false\">Health Technology</button></div>",
+      "css": ".ds-chips { display: flex; gap: 8px; } .ds-chip { min-height: 44px; padding: 0 16px; border-radius: 8px; border: 1px solid #e2e8f0; background: #fff; color: #475569; font: 600 14px 'Source Sans 3', system-ui, sans-serif; cursor: pointer; transition: border-color .3s, color .3s; } .ds-chip:hover { border-color: #94a3b8; color: #0f172a; } .ds-chip[aria-pressed=\"true\"] { background: #0f172a; border-color: #0f172a; color: #fff; } .ds-chip:focus-visible { outline: 2px solid #1e3a8a; outline-offset: 2px; }"
+    },
+    {
+      "name": "Insight Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Typographic article card: area, date and read time, serif title, summary. No placeholder imagery.",
+      "html": "<a class=\"ds-card\" href=\"#\"><p class=\"ds-card-area\">Health Technology</p><p class=\"ds-card-meta\">15 July 2026 · 7 min read</p><h3 class=\"ds-card-title\">Multi-tenancy when the tenants are hospitals</h3><p class=\"ds-card-summary\">Three separations get conflated in multi-tenant systems: tenant, role, and workflow.</p><span class=\"ds-card-link\">Read article →</span></a>",
+      "css": ".ds-card { display: block; max-width: 360px; padding: 28px; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; text-decoration: none; font-family: 'Source Sans 3', system-ui, sans-serif; transition: border-color .3s; } .ds-card:hover { border-color: #94a3b8; } .ds-card:focus-visible { outline: 2px solid #1e3a8a; outline-offset: 2px; } .ds-card-area { margin: 0; font-size: 14px; font-weight: 600; color: #1e3a8a; } .ds-card-meta { margin: 4px 0 0; font-size: 14px; color: #64748b; } .ds-card-title { margin: 16px 0 0; font: 600 20px/1.35 'Source Serif 4', Georgia, serif; color: #0f172a; } .ds-card-summary { margin: 12px 0 0; color: #475569; line-height: 1.65; } .ds-card-link { display: inline-block; margin-top: 24px; font-size: 14px; font-weight: 600; color: #1e3a8a; }"
+    },
+    {
+      "name": "Status Badges",
+      "kind": "custom",
+      "refersTo": "status-live",
+      "description": "Live and building states must never look interchangeable.",
+      "html": "<div class=\"ds-status-row\"><span class=\"ds-status ds-live\"><i></i>In production · Active healthcare users</span><span class=\"ds-status ds-building\"><i></i>In active development</span></div>",
+      "css": ".ds-status-row { display: flex; gap: 12px; flex-wrap: wrap; } .ds-status { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 8px; font: 600 16px 'Source Sans 3', system-ui, sans-serif; } .ds-status i { width: 8px; height: 8px; border-radius: 50%; } .ds-live { background: #ecfdf5; color: #064e3b; border: 1px solid #d1fae5; } .ds-live i { background: #10b981; } .ds-building { background: #fff; color: #92400e; border: 1px dashed #fcd34d; } .ds-building i { background: #f59e0b; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Architect's Folio",
+    "overview": "A senior practitioner's bound portfolio. The case studies and the writing carry the argument; the interface is the folio they sit in: quiet paper, confident ink, one blue for the things you can act on. Nothing on the page performs. It is senior, editorial, precise, and warm: unhurried enough to read, exact enough to trust, and human in its voice rather than its decoration.\n\nDensity is moderate and reading-first. Sections breathe (96px apart), prose holds a comfortable measure, and hierarchy comes from the serif display voice against a plain sans, not from colour, imagery, or motion. Real artefacts (product screenshots, article covers, a founder's testimonial) are the only imagery; nothing stands in for content.",
+    "keyCharacteristics": [
+      "Serif display headings over a sans body; one heading weight (600).",
+      "Paper background, ink text, a single blue accent.",
+      "Flat surfaces separated by hairlines, not shadows.",
+      "Content visible from the first paint; motion is a single, small hero entrance.",
+      "Every claim is evidence: status badges, real screenshots, verifiable links."
+    ],
+    "rules": [
+      {
+        "name": "The One Blue Rule",
+        "body": "Blueprint Blue marks what is navigable or classifying. It is never a background, never a gradient, never a fill larger than a badge.",
+        "section": "colors"
+      },
+      {
+        "name": "The Status Means Status Rule",
+        "body": "Green and amber appear only on status badges. A green that decorates makes the real \"In production\" claim worth less.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Weight Rule",
+        "body": "Headings use 600 and nothing else. Hierarchy comes from size and space, not from semibold-versus-bold.",
+        "section": "typography"
+      },
+      {
+        "name": "The Heading Speaks Rule",
+        "body": "No eyebrow or kicker above a heading. Classification (research area, format) sits below the title, in the byline.",
+        "section": "typography"
+      },
+      {
+        "name": "The Hairline Rule",
+        "body": "Separate with a 1px border or a change of band, never with a shadow. Hover states darken borders and shift accents to Blueprint Blue; they do not lift or cast shadows.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep every section heading identical: Source Serif 4, 600, 1.875rem → 2.25rem, ink.",
+      "Do cap body text near 56–60ch on the homepage and about 75 characters per line in articles.",
+      "Do render content visible on first paint; keep motion to the single hero entrance and respect reduced motion.",
+      "Do keep text at 4.5:1 contrast or better; Muted Slate (`text-muted`) is the lightest text allowed on paper.",
+      "Do make every interactive target at least 44px.",
+      "Do use real artefacts (screenshots, covers, testimonials) or nothing."
+    ],
+    "donts": [
+      "Don't place an eyebrow, kicker, or uppercase label above a heading.",
+      "Don't use coloured side borders thicker than 1px on cards, callouts, quotes, or notes.",
+      "Don't use gradients, glows, or decorative colour fills as placeholders for missing imagery.",
+      "Don't fade sections in from invisible or give every section the same entrance animation.",
+      "Don't use Production Green or Building Amber outside status badges.",
+      "Don't set small uppercase labels in the serif."
+    ]
+  }
+}

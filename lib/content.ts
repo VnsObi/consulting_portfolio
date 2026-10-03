@@ -38,12 +38,13 @@ export const hero = {
 export const organisations = [
   "VNSIS Technologies",
   "Dustid",
+  "Dialectica",
   "CIUCI Consulting",
   "AGCare Group",
   "Argus Protocol",
   "Edi Hospital",
   "AGCare Specialist Clinic",
-  "Ameso Specialist Clinic",
+  "Ameso Specialist Hospital",
 ];
 
 export const about = {

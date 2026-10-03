@@ -24,7 +24,7 @@ function Featured({ card }: { card: Card }) {
       )}
       <div className="flex flex-col justify-center p-8 md:p-12">
         <InsightMeta card={card} />
-        <h2 className="mt-4 text-2xl md:text-3xl font-bold text-deep-slate leading-tight text-balance group-hover:text-midnight-blue transition-colors">
+        <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-deep-slate leading-tight text-balance group-hover:text-midnight-blue transition-colors">
           {card.title}
         </h2>
         <p className="mt-4 text-lg text-slate-600 leading-relaxed max-w-[65ch]">

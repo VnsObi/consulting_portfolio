@@ -53,7 +53,7 @@ export default function InsightCard({ card }: { card: Card }) {
       className="group flex flex-col h-full bg-white rounded-xl border border-slate-200 p-6 md:p-7 hover:border-slate-400 transition-colors duration-300"
     >
       <InsightMeta card={card} />
-      <h3 className="mt-4 text-xl font-bold text-deep-slate leading-snug text-balance group-hover:text-midnight-blue transition-colors">
+      <h3 className="mt-4 text-xl font-semibold text-deep-slate leading-snug text-balance group-hover:text-midnight-blue transition-colors">
         {card.title}
       </h3>
       <p className="mt-3 text-slate-600 leading-relaxed flex-grow">{card.summary}</p>

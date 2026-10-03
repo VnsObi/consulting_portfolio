@@ -32,7 +32,7 @@ export default function Hero() {
         >
           <motion.h1
             variants={rise}
-            className="text-4xl md:text-6xl font-bold tracking-tight text-deep-slate leading-[1.1] mb-5"
+            className="text-4xl md:text-6xl font-semibold tracking-tight text-deep-slate leading-[1.08] text-balance mb-5"
           >
             {hero.title}
           </motion.h1>
@@ -103,7 +103,7 @@ export default function Hero() {
 
         {/* Organisations worked with */}
         <div className="mt-20 pt-12 border-t border-slate-200">
-          <h2 className="text-xs font-semibold text-slate-500 mb-6 uppercase tracking-widest text-center">
+          <h2 className="font-sans text-xs font-semibold text-slate-500 mb-6 uppercase tracking-widest text-center">
             Organisations I have built for and worked with
           </h2>
           <ul className="flex flex-wrap justify-center gap-x-8 gap-y-3">

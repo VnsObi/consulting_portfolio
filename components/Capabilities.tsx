@@ -1,5 +1,9 @@
 import { capabilities, toolkit } from "@/lib/content";
 
+// Hover feedback shifts colour and accents only (no lifts or shadows), and
+// switches off under reduced motion.
+const ease = "transition-all duration-300 ease-out motion-reduce:transition-none";
+
 /**
  * Cards sit on a six-column grid: three per row by default, but a final row
  * of two stretches to half-width each so the grid never leaves a gap.
@@ -28,21 +32,23 @@ export default function Capabilities() {
               key={capability.title}
               className={
                 capability.lead
-                  ? "md:col-span-2 lg:col-span-6 bg-deep-slate p-8 md:p-10 rounded-2xl"
-                  : `${cardSpan(position++, supporting)} bg-white p-8 rounded-2xl border border-slate-200`
+                  ? "group md:col-span-2 lg:col-span-6 bg-deep-slate p-8 md:p-10 rounded-2xl"
+                  : `group ${cardSpan(position++, supporting)} bg-white p-8 rounded-2xl border border-slate-200 hover:border-slate-400 ${ease}`
               }
             >
               <span
                 aria-hidden="true"
-                className={`block w-10 h-1 rounded-full mb-6 ${
-                  capability.lead ? "bg-white/40" : "bg-midnight-blue"
+                className={`block w-10 h-1 rounded-full mb-6 group-hover:w-16 ${ease} ${
+                  capability.lead
+                    ? "bg-white/40 group-hover:bg-white"
+                    : "bg-midnight-blue"
                 }`}
               />
               <h3
-                className={`font-bold mb-3 leading-snug ${
+                className={`font-semibold mb-3 leading-snug ${ease} ${
                   capability.lead
                     ? "text-2xl md:text-3xl text-white"
-                    : "text-xl text-deep-slate"
+                    : "text-xl text-deep-slate group-hover:text-midnight-blue"
                 }`}
               >
                 {capability.title}
@@ -50,7 +56,7 @@ export default function Capabilities() {
               <p
                 className={`leading-relaxed ${
                   capability.lead
-                    ? "text-lg text-slate-300 max-w-3xl"
+                    ? "text-lg text-slate-300 max-w-[60ch]"
                     : "text-base text-slate-700"
                 }`}
               >
@@ -68,15 +74,15 @@ export default function Capabilities() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
             {toolkit.map((group) => (
-              <div key={group.group}>
-                <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500 pb-3 mb-4 border-b border-slate-300">
+              <div key={group.group} className="group">
+                <h3 className="font-sans text-sm font-bold uppercase tracking-wider text-slate-500 pb-3 mb-4 border-b border-slate-300 group-hover:border-midnight-blue group-hover:text-midnight-blue transition-colors duration-300 motion-reduce:transition-none">
                   {group.group}
                 </h3>
                 <ul className="flex flex-wrap gap-2">
                   {group.items.map((item) => (
                     <li
                       key={item}
-                      className="px-3 py-1.5 bg-white border border-slate-200 text-slate-700 text-sm rounded-lg font-medium"
+                      className={`px-3 py-1.5 bg-white border border-slate-200 text-slate-700 text-sm rounded-lg font-medium hover:border-midnight-blue hover:text-midnight-blue hover:bg-blue-50/60 ${ease}`}
                     >
                       {item}
                     </li>

@@ -11,7 +11,7 @@ export default function Insights({ cards }: { cards: Card[] }) {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-semibold text-deep-slate mb-4">
+            <h2 className="text-3xl md:text-4xl font-semibold text-deep-slate mb-4">
               Insights
             </h2>
             <p className="text-lg text-slate-600">

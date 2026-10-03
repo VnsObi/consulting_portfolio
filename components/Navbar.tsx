@@ -42,7 +42,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          className="inline-flex items-center min-h-11 text-xl md:text-2xl font-bold tracking-tight text-deep-slate shrink-0"
+          className="inline-flex items-center min-h-11 font-display text-xl md:text-2xl font-semibold text-deep-slate shrink-0"
         >
           Evans Obi
         </Link>

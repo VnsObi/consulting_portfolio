@@ -36,7 +36,7 @@ export default async function InsightsArchive() {
               />
               Back to Home
             </Link>
-            <h1 className="text-4xl md:text-5xl font-bold text-deep-slate mb-6">
+            <h1 className="text-4xl md:text-5xl font-semibold text-deep-slate mb-6">
               Insights
             </h1>
             <p className="text-xl text-slate-600 max-w-2xl">

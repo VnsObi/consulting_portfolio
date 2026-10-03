@@ -1,16 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Source_Sans_3, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import MotionProvider from "@/components/MotionProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Body face: Source Sans 3, the designed companion to the Source Serif display face.
+const sourceSans = Source_Sans_3({
+  variable: "--font-source-sans",
   subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+// Display face for headings. Optical sizing tightens it at large sizes.
+const sourceSerif = Source_Serif_4({
+  variable: "--font-source-serif",
+  subsets: ["latin"],
+  axes: ["opsz"],
 });
 
 const title = "Evans Obi | Technical Architect & Engineering Leader";
@@ -104,7 +112,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${sourceSans.variable} ${geistMono.variable} ${sourceSerif.variable} antialiased`}
       >
         <script
           type="application/ld+json"
