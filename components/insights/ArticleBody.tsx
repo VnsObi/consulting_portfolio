@@ -83,13 +83,17 @@ const components: PortableTextComponents = {
     callout: ({ value }) => (
       <div
         role="note"
-        className={`not-prose my-8 rounded-xl border-l-4 p-5 ${
+        className={`not-prose my-8 rounded-xl border p-5 md:p-6 ${
           value.tone === "caution"
-            ? "border-amber-500 bg-amber-50"
-            : "border-midnight-blue bg-slate-50"
+            ? "border-amber-300 bg-amber-50"
+            : "border-slate-200 bg-slate-50"
         }`}
       >
-        <span className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
+        <span
+          className={`block text-sm font-semibold mb-2 ${
+            value.tone === "caution" ? "text-amber-800" : "text-midnight-blue"
+          }`}
+        >
           {CALLOUT_LABEL[value.tone ?? "note"] ?? "Note"}
         </span>
         <p className="text-lg text-deep-slate leading-relaxed">{value.text}</p>
@@ -101,16 +105,16 @@ const components: PortableTextComponents = {
       return (
         <figure className="not-prose my-10">
           <div
-            className="overflow-x-auto rounded-xl border border-slate-200"
+            className="overflow-x-auto border-y border-slate-300"
             role="region"
             aria-label={value.caption ?? "Table"}
             tabIndex={0}
           >
             <table className="w-full text-left text-sm">
-              <thead className="bg-slate-50 text-deep-slate">
+              <thead className="text-deep-slate border-b border-slate-300">
                 <tr>
                   {(head.cells ?? []).map((cell: string, index: number) => (
-                    <th key={index} scope="col" className="px-4 py-3 font-semibold">
+                    <th key={index} scope="col" className="px-3 py-3 font-semibold first:pl-0">
                       {cell}
                     </th>
                   ))}
@@ -120,7 +124,7 @@ const components: PortableTextComponents = {
                 {rows.map((row: { _key: string; cells?: string[] }) => (
                   <tr key={row._key}>
                     {(row.cells ?? []).map((cell, index) => (
-                      <td key={index} className="px-4 py-3 align-top">
+                      <td key={index} className="px-3 py-3 align-top first:pl-0">
                         {cell}
                       </td>
                     ))}
@@ -146,7 +150,7 @@ export default function ArticleBody({ body }: { body: PortableTextBlock[] }) {
         prose-a:text-midnight-blue prose-a:font-semibold prose-a:no-underline hover:prose-a:underline
         prose-strong:text-deep-slate
         prose-code:before:content-none prose-code:after:content-none prose-code:bg-slate-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:font-medium
-        prose-blockquote:border-l-4 prose-blockquote:border-midnight-blue prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:bg-alabaster prose-blockquote:py-2 prose-blockquote:pr-4"
+        prose-blockquote:border-l-0 prose-blockquote:border-y prose-blockquote:border-slate-200 prose-blockquote:px-0 prose-blockquote:py-5 prose-blockquote:not-italic prose-blockquote:font-semibold prose-blockquote:text-deep-slate"
     >
       <PortableText value={body} components={components} />
     </div>

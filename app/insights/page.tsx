@@ -28,7 +28,7 @@ export default async function InsightsArchive() {
           <div className="mb-12">
             <Link
               href="/"
-              className="inline-flex items-center text-slate-500 hover:text-midnight-blue transition-colors mb-6 group"
+              className="inline-flex items-center min-h-11 text-slate-500 hover:text-midnight-blue transition-colors mb-4 group"
             >
               <ArrowLeft
                 size={20}

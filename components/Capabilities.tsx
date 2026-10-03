@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { capabilities, toolkit } from "@/lib/content";
 
 /**
@@ -21,25 +18,14 @@ export default function Capabilities() {
   return (
     <section className="py-24 px-6 bg-slate-50" id="capabilities">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-3xl mb-14"
-        >
-          <h2 className="text-3xl md:text-4xl font-semibold text-deep-slate">
-            Core Capabilities
-          </h2>
-        </motion.div>
+        <h2 className="max-w-3xl mb-14 text-3xl md:text-4xl font-semibold text-deep-slate">
+          Core Capabilities
+        </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
-          {capabilities.map((capability, index) => (
-            <motion.div
+          {capabilities.map((capability) => (
+            <div
               key={capability.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: (index % 3) * 0.08, duration: 0.4 }}
               className={
                 capability.lead
                   ? "md:col-span-2 lg:col-span-6 bg-deep-slate p-8 md:p-10 rounded-2xl"
@@ -70,17 +56,12 @@ export default function Capabilities() {
               >
                 {capability.description}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Toolkit */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-24"
-        >
+        <div className="mt-24">
           <h2 className="text-3xl md:text-4xl font-semibold text-deep-slate mb-14">
             Technology &amp; Delivery Toolkit
           </h2>
@@ -104,7 +85,7 @@ export default function Capabilities() {
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

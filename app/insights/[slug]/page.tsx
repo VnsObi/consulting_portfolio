@@ -100,10 +100,10 @@ export default async function InsightPage({ params }: Props) {
       <Navbar />
       <main className="flex-grow pt-32 pb-24 bg-white">
         <article>
-          <header className="max-w-3xl mx-auto px-6">
+          <header className="max-w-[42rem] mx-auto px-6">
             <Link
               href="/insights"
-              className="inline-flex items-center text-slate-500 hover:text-midnight-blue transition-colors mb-10 group"
+              className="inline-flex items-center min-h-11 text-slate-500 hover:text-midnight-blue transition-colors mb-8 group"
             >
               <ArrowLeft
                 size={20}
@@ -112,18 +112,12 @@ export default async function InsightPage({ params }: Props) {
               All insights
             </Link>
 
-            <p className="text-sm font-bold uppercase tracking-wider text-midnight-blue">
-              {areaLabel(insight.tag)}
-              <span className="mx-2 text-slate-300">/</span>
-              <span className="text-slate-500">{formatLabel(insight.format)}</span>
-            </p>
-
-            <h1 className="mt-4 text-4xl md:text-5xl font-bold text-deep-slate leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-deep-slate leading-tight text-balance">
               {insight.title}
             </h1>
 
             {insight.researchQuestion && (
-              <p className="mt-6 text-xl text-deep-slate font-medium leading-relaxed border-l-2 border-midnight-blue pl-5">
+              <p className="mt-6 text-xl text-deep-slate font-medium leading-relaxed border-l border-midnight-blue pl-5">
                 {insight.researchQuestion}
               </p>
             )}
@@ -139,6 +133,11 @@ export default async function InsightPage({ params }: Props) {
               <span aria-hidden="true" className="text-slate-300">·</span>
               <span>{insight.readMinutes} min read</span>
             </div>
+            <p className="mt-2 text-sm text-slate-500">
+              <span className="font-semibold text-midnight-blue">{areaLabel(insight.tag)}</span>
+              <span aria-hidden="true" className="mx-2 text-slate-300">·</span>
+              {formatLabel(insight.format)}
+            </p>
 
             {fromVnsis && (
               <p className="mt-4 text-sm text-slate-500">
@@ -169,7 +168,7 @@ export default async function InsightPage({ params }: Props) {
             </figure>
           )}
 
-          <div className="max-w-3xl mx-auto px-6 mt-12">
+          <div className="max-w-[42rem] mx-auto px-6 mt-12">
             {insight.keyTakeaways && insight.keyTakeaways.length > 0 && (
               <aside className="mb-12 rounded-xl bg-slate-50 border border-slate-200 p-6 md:p-8">
                 <h2 className={sectionHeading}>Key takeaways</h2>

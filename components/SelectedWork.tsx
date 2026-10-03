@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { Github } from "lucide-react";
 import { projects, type Project } from "@/lib/content";
 
@@ -26,7 +25,7 @@ function ProjectGallery({ project }: { project: Project }) {
             type="button"
             aria-pressed={index === active}
             onClick={() => setActive(index)}
-            className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors border ${
+            className={`px-4 min-h-11 rounded-lg text-sm font-semibold transition-colors border ${
               index === active
                 ? "bg-deep-slate text-white border-deep-slate"
                 : "bg-white text-slate-600 border-slate-200 hover:border-slate-400 hover:text-deep-slate"
@@ -57,18 +56,14 @@ function ProjectGallery({ project }: { project: Project }) {
 
 function ProjectEntry({ project, index }: { project: Project; index: number }) {
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.5 }}
+    <article
       className="py-14 border-b border-slate-200 last:border-b-0"
       aria-labelledby={`project-${project.id}`}
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-12 gap-y-8">
         {/* Left column: title, summary, visual */}
         <div className="lg:col-span-7">
-          <span className="text-sm font-bold text-slate-400 tabular-nums">
+          <span className="text-sm font-bold text-slate-500 tabular-nums">
             {String(index + 1).padStart(2, "0")}
           </span>
           <h3
@@ -80,7 +75,7 @@ function ProjectEntry({ project, index }: { project: Project; index: number }) {
 
           <div className="space-y-4">
             {project.summary.map((paragraph, i) => (
-              <p key={i} className="text-lg text-slate-700 leading-relaxed">
+              <p key={i} className="text-lg text-slate-700 leading-relaxed max-w-[60ch]">
                 {paragraph}
               </p>
             ))}
@@ -101,7 +96,7 @@ function ProjectEntry({ project, index }: { project: Project; index: number }) {
           )}
 
           {project.note && (
-            <p className="mt-8 text-lg text-deep-slate font-medium leading-relaxed border-l-2 border-midnight-blue pl-5">
+            <p className="mt-8 text-lg text-deep-slate font-medium leading-relaxed border-l border-midnight-blue pl-5">
               {project.note}
             </p>
           )}
@@ -223,7 +218,7 @@ function ProjectEntry({ project, index }: { project: Project; index: number }) {
           </ul>
         </div>
       </div>
-    </motion.article>
+    </article>
   );
 }
 
@@ -231,10 +226,7 @@ export default function SelectedWork() {
   return (
     <section className="py-24 px-6 bg-alabaster" id="work">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <div
           className="max-w-3xl mb-6"
         >
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-deep-slate mb-5">
@@ -245,7 +237,7 @@ export default function SelectedWork() {
             shows the problem, the architecture, and what I was actually
             responsible for.
           </p>
-        </motion.div>
+        </div>
 
         <div className="border-t border-slate-200">
           {projects.map((project, index) => (

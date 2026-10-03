@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import {
   Linkedin,
   Github,
@@ -17,12 +14,7 @@ export default function Footer() {
       className="py-24 px-6 bg-slate-900 border-t border-slate-800"
     >
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mb-20"
-        >
+        <div className="max-w-4xl mb-20">
           <h2 className="text-3xl md:text-5xl font-semibold text-white mb-8 tracking-tight">
             {contact.heading}
           </h2>
@@ -30,7 +22,7 @@ export default function Footer() {
           {contact.paragraphs.map((paragraph, index) => (
             <p
               key={index}
-              className="text-slate-300 text-lg mb-5 leading-relaxed"
+              className="text-slate-300 text-lg mb-5 leading-relaxed max-w-[60ch]"
             >
               {paragraph}
             </p>
@@ -77,27 +69,21 @@ export default function Footer() {
             <span className="mx-2 text-slate-600">·</span>
             Typical response time: under 24 hours.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="border-t border-slate-700 pt-12"
-        >
+        <div className="border-t border-slate-700 pt-12">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-slate-400">
             <div className="flex items-center gap-2 text-center md:text-left">
               <MapPin size={20} className="shrink-0" />
               <span className="text-sm font-medium">{profile.location}</span>
             </div>
 
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-1">
               <a
                 href={profile.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white transition-colors"
+                className="p-2.5 rounded-lg hover:text-white hover:bg-slate-800 transition-colors"
                 aria-label="Evans Obi on LinkedIn"
               >
                 <Linkedin size={24} />
@@ -106,14 +92,14 @@ export default function Footer() {
                 href={profile.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white transition-colors"
+                className="p-2.5 rounded-lg hover:text-white hover:bg-slate-800 transition-colors"
                 aria-label="Evans Obi on GitHub"
               >
                 <Github size={24} />
               </a>
               <a
                 href={`mailto:${profile.email}`}
-                className="hover:text-white transition-colors"
+                className="p-2.5 rounded-lg hover:text-white hover:bg-slate-800 transition-colors"
                 aria-label="Email Evans Obi"
               >
                 <Mail size={24} />
@@ -122,7 +108,7 @@ export default function Footer() {
                 href={profile.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-white transition-colors"
+                className="p-2.5 rounded-lg hover:text-white hover:bg-slate-800 transition-colors"
                 aria-label="Message Evans Obi on WhatsApp"
               >
                 <MessageCircle size={24} />
@@ -130,10 +116,10 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="text-center mt-12 text-slate-500 text-sm">
+          <div className="text-center mt-12 text-slate-400 text-sm">
             <p>© {new Date().getFullYear()} Evans Obi. All rights reserved.</p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </footer>
   );

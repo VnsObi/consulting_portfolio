@@ -42,7 +42,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          className="text-xl md:text-2xl font-bold tracking-tight text-deep-slate shrink-0"
+          className="inline-flex items-center min-h-11 text-xl md:text-2xl font-bold tracking-tight text-deep-slate shrink-0"
         >
           Evans Obi
         </Link>
@@ -90,7 +90,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden p-2 text-deep-slate"
+          className="lg:hidden p-2.5 -mr-2.5 text-deep-slate"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}

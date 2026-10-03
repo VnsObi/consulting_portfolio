@@ -4,13 +4,15 @@ import { motion } from "framer-motion";
 import { ArrowRight, Github, Mail } from "lucide-react";
 import { hero, organisations, profile } from "@/lib/content";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+// The page's one authored entrance: content is visible from the first paint
+// and settles upward with an exponential ease-out. Never fades in from zero.
+const rise = {
+  hidden: { y: 12 },
+  visible: { y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const } },
 };
 
 const staggerContainer = {
-  visible: { transition: { staggerChildren: 0.15 } },
+  visible: { transition: { staggerChildren: 0.08 } },
 };
 
 export default function Hero() {
@@ -29,28 +31,28 @@ export default function Hero() {
           className="max-w-4xl mx-auto text-center"
         >
           <motion.h1
-            variants={fadeUp}
+            variants={rise}
             className="text-4xl md:text-6xl font-bold tracking-tight text-deep-slate leading-[1.1] mb-5"
           >
             {hero.title}
           </motion.h1>
 
           <motion.p
-            variants={fadeUp}
+            variants={rise}
             className="text-base md:text-lg font-semibold text-midnight-blue tracking-wide mb-8"
           >
             {hero.tagline}
           </motion.p>
 
           <motion.p
-            variants={fadeUp}
-            className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
+            variants={rise}
+            className="text-lg md:text-xl text-slate-600 max-w-[60ch] mx-auto leading-relaxed"
           >
             {hero.description}
           </motion.p>
 
           <motion.div
-            variants={fadeUp}
+            variants={rise}
             className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mt-10"
           >
             <a
@@ -83,7 +85,7 @@ export default function Hero() {
           </motion.div>
 
           <motion.ul
-            variants={fadeUp}
+            variants={rise}
             className="mt-10 flex flex-wrap justify-center items-center gap-x-3 gap-y-2 text-sm font-medium text-slate-500"
           >
             {hero.meta.map((item, index) => (
@@ -100,26 +102,21 @@ export default function Hero() {
         </motion.div>
 
         {/* Organisations worked with */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
-          className="mt-20 pt-12 border-t border-slate-200"
-        >
-          <h2 className="text-xs font-semibold text-slate-400 mb-6 uppercase tracking-widest text-center">
+        <div className="mt-20 pt-12 border-t border-slate-200">
+          <h2 className="text-xs font-semibold text-slate-500 mb-6 uppercase tracking-widest text-center">
             Organisations I have built for and worked with
           </h2>
           <ul className="flex flex-wrap justify-center gap-x-8 gap-y-3">
             {organisations.map((org) => (
               <li
                 key={org}
-                className="text-base md:text-lg font-semibold text-slate-400"
+                className="text-base md:text-lg font-semibold text-slate-500"
               >
                 {org}
               </li>
             ))}
           </ul>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

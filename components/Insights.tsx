@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import type { InsightCard as Card } from "@/lib/insight-format";
 import InsightCard from "@/components/insights/InsightCard";
@@ -24,24 +21,15 @@ export default function Insights({ cards }: { cards: Card[] }) {
           </div>
           <Link
             href="/insights"
-            className="text-midnight-blue font-semibold flex items-center gap-2 hover:gap-3 transition-all"
+            className="text-midnight-blue font-semibold inline-flex items-center gap-2 min-h-11 hover:gap-3 transition-all"
           >
             Read all articles <ArrowRight size={20} />
           </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {cards.map((card, index) => (
-            <motion.div
-              key={card.slug}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.4 }}
-              className="h-full"
-            >
-              <InsightCard card={card} />
-            </motion.div>
+          {cards.map((card) => (
+            <InsightCard key={card.slug} card={card} />
           ))}
         </div>
       </div>
