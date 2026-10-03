@@ -24,6 +24,9 @@ export default function Navbar() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
       setIsOpen(false);
+    } else {
+      // Off the homepage (e.g. an insight article), go to the section there.
+      window.location.assign(`/#${id}`);
     }
   };
 

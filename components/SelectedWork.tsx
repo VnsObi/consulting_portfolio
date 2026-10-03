@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Github } from "lucide-react";
 import { projects, type Project } from "@/lib/content";
 
 function ProjectGallery({ project }: { project: Project }) {
@@ -87,10 +88,33 @@ function ProjectEntry({ project, index }: { project: Project; index: number }) {
 
           {project.gallery && <ProjectGallery project={project} />}
 
+          {project.link && (
+            <a
+              href={project.link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center gap-2 px-5 py-3 bg-white border border-slate-300 text-deep-slate text-base font-semibold rounded-lg hover:border-slate-400 hover:bg-slate-50 transition-all duration-300"
+            >
+              <Github size={18} />
+              {project.link.label}
+            </a>
+          )}
+
           {project.note && (
             <p className="mt-8 text-lg text-deep-slate font-medium leading-relaxed border-l-2 border-midnight-blue pl-5">
               {project.note}
             </p>
+          )}
+
+          {project.quote && (
+            <figure className="mt-8 rounded-xl bg-white border border-slate-200 p-6 md:p-8">
+              <blockquote className="text-xl md:text-2xl font-semibold text-deep-slate leading-snug">
+                &ldquo;{project.quote.text}&rdquo;
+              </blockquote>
+              <figcaption className="mt-4 text-sm font-medium text-slate-500">
+                — {project.quote.attribution}
+              </figcaption>
+            </figure>
           )}
 
           {project.pending && (
@@ -167,10 +191,20 @@ function ProjectEntry({ project, index }: { project: Project; index: number }) {
               <h4 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-3">
                 Status
               </h4>
-              <p className="inline-flex items-center gap-2 text-base font-semibold text-forest-green bg-emerald-50 border border-emerald-100 rounded-lg px-4 py-2">
+              <p
+                className={`inline-flex items-center gap-2 text-base font-semibold rounded-lg px-4 py-2 border ${
+                  project.statusTone === "building"
+                    ? "text-amber-800 bg-white border-amber-300 border-dashed"
+                    : "text-forest-green bg-emerald-50 border-emerald-100"
+                }`}
+              >
                 <span
                   aria-hidden="true"
-                  className="w-2 h-2 rounded-full bg-emerald-500"
+                  className={`w-2 h-2 rounded-full ${
+                    project.statusTone === "building"
+                      ? "bg-amber-500"
+                      : "bg-emerald-500"
+                  }`}
                 />
                 {project.status}
               </p>

@@ -3,7 +3,21 @@
 import { motion } from "framer-motion";
 import { capabilities, toolkit } from "@/lib/content";
 
+/**
+ * Cards sit on a six-column grid: three per row by default, but a final row
+ * of two stretches to half-width each so the grid never leaves a gap.
+ */
+function cardSpan(position: number, total: number) {
+  const lastRowStart = total - (total % 3);
+  return total % 3 === 2 && position >= lastRowStart
+    ? "lg:col-span-3"
+    : "lg:col-span-2";
+}
+
 export default function Capabilities() {
+  const supporting = capabilities.filter((c) => !c.lead).length;
+  let position = 0;
+
   return (
     <section className="py-24 px-6 bg-slate-50" id="capabilities">
       <div className="max-w-7xl mx-auto">
@@ -18,7 +32,7 @@ export default function Capabilities() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
           {capabilities.map((capability, index) => (
             <motion.div
               key={capability.title}
@@ -28,8 +42,8 @@ export default function Capabilities() {
               transition={{ delay: (index % 3) * 0.08, duration: 0.4 }}
               className={
                 capability.lead
-                  ? "md:col-span-2 lg:col-span-3 bg-deep-slate p-8 md:p-10 rounded-2xl"
-                  : "bg-white p-8 rounded-2xl border border-slate-200"
+                  ? "md:col-span-2 lg:col-span-6 bg-deep-slate p-8 md:p-10 rounded-2xl"
+                  : `${cardSpan(position++, supporting)} bg-white p-8 rounded-2xl border border-slate-200`
               }
             >
               <span

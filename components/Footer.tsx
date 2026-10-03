@@ -21,7 +21,7 @@ export default function Footer() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-3xl mb-20"
+          className="max-w-4xl mb-20"
         >
           <h2 className="text-3xl md:text-5xl font-semibold text-white mb-8 tracking-tight">
             {contact.heading}
@@ -37,13 +37,16 @@ export default function Footer() {
           ))}
 
           <div className="flex flex-col sm:flex-row flex-wrap gap-4 mt-10">
-            <a
-              href={`mailto:${profile.email}`}
-              className="bg-white text-slate-900 px-7 py-4 rounded-lg hover:bg-slate-100 transition-colors text-base font-bold flex items-center justify-center gap-2"
-            >
-              <Mail className="w-5 h-5" />
-              Send an Email
-            </a>
+            {contact.actions.map((action) => (
+              <a
+                key={action.label}
+                href={`mailto:${profile.email}?subject=${encodeURIComponent(action.subject)}`}
+                className="bg-white text-slate-900 px-7 py-4 rounded-lg hover:bg-slate-100 transition-colors text-base font-bold flex items-center justify-center gap-2"
+              >
+                <Mail className="w-5 h-5" />
+                {action.label}
+              </a>
+            ))}
             <a
               href={profile.linkedin}
               target="_blank"

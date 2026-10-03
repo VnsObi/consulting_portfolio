@@ -17,14 +17,15 @@ export const navLinks = [
   { name: "Selected Work", href: "#work" },
   { name: "Experience", href: "#experience" },
   { name: "Capabilities", href: "#capabilities" },
+  { name: "Insights", href: "#insights" },
   { name: "Contact", href: "#contact" },
 ];
 
 export const hero = {
   title: "Technical Architect & Engineering Leader",
-  tagline: "Systems · Infrastructure · Security",
+  tagline: "Problem → Architecture → Production",
   description:
-    "I design, build, and lead production systems across software, infrastructure, security, and AI. My work spans architecture, technical leadership, product delivery, and hands-on implementation — from the first technical decision to production.",
+    "I turn ambiguous operational and technical problems into production systems — from product decisions and architecture through implementation, infrastructure, and delivery.",
   meta: [
     "Founder & CTO at VNSIS Technologies",
     "Former CTO at Dustid",
@@ -48,10 +49,9 @@ export const organisations = [
 export const about = {
   heading: "About Me",
   paragraphs: [
-    "I'm Evans Obi, a technical architect and engineering leader with experience across systems design, software delivery, IT operations, cloud infrastructure, cybersecurity, and engineering management.",
-    "My background grew from infrastructure, cybersecurity, and enterprise IT into technical leadership, product architecture, and hands-on software delivery.",
-    "I have led cross-functional teams, translated business requirements into technical plans, reviewed architecture and implementation decisions, coordinated frontend, backend, QA, design, and security work, and contributed directly to the development and deployment of production systems.",
-    "Today, I work across system architecture and hands-on technical execution, particularly in healthcare technology, AI-agent systems, cloud services, workflow automation, and offline-first applications.",
+    "I work where product, architecture, and engineering ownership overlap. I'm usually most useful when the problem is still ambiguous: understanding the operational constraint, deciding what should be built, choosing the architecture and its trade-offs, and staying close enough to execution to get it reliably into production.",
+    "I've done that across healthcare systems, agentic software, security infrastructure, and early-stage engineering organisations.",
+    "I also build teams and technical functions — establishing structure, mentoring engineers, and creating the delivery practices a product needs as it and the organisation around it grow.",
   ],
   experienceNote:
     "Over eight years of combined experience across technology operations, infrastructure, cybersecurity, technical leadership, and software product delivery.",
@@ -65,6 +65,8 @@ export interface Project {
   blocks?: { label: string; body?: string; items?: string[] }[];
   technicalFocus?: string[];
   status?: string;
+  /** "live" renders the green production badge; "building" a neutral amber one. */
+  statusTone?: "live" | "building";
   tags: string[];
   /** Screenshots. Only populated where real assets exist. */
   gallery?: { src: string; alt: string; label: string; caption: string }[];
@@ -74,20 +76,25 @@ export interface Project {
    */
   pending?: string[];
   note?: string;
+  /** Verbatim third-party testimonial. Never paraphrase. */
+  quote?: { text: string; attribution: string };
+  /** External proof, such as a public repository. */
+  link?: { href: string; label: string };
 }
 
 export const projects: Project[] = [
   {
     id: "healthos",
-    title: "HealthOS — Offline-First Healthcare Operations Platform",
+    title: "HealthOS — From Operational Gaps to a Production Healthcare Platform",
     summary: [
-      "HealthOS is a multi-tenant platform being developed by VNSIS Technologies for hospitals and clinics operating in environments where internet access may be slow or unreliable. A ward cannot stop admitting patients because a link went down, so the system is designed to keep full clinical and billing function with no connection at all.",
-      "The platform brings clinical and administrative workflows together, including patient records, consultations, nursing, laboratory, pharmacy, billing, HMO processes, inventory, appointments, and operational reporting.",
+      "Running technology across multiple healthcare sites, I kept seeing the same operational gaps: fragmented workflows, clinical and administrative systems that didn't talk to each other, coordination done by hand, and poor continuity between pharmacy, billing, HMO, and patient operations. On top of that, the internet connection could not be relied on.",
+      "I designed HealthOS around those operational problems rather than starting from a feature list. It is one multi-tenant platform for patient records, consultations, nursing, laboratory, pharmacy, billing, HMO processes, inventory, and reporting — and because a ward cannot stop admitting patients when a link goes down, it keeps full clinical and billing function with no connection at all.",
+      "HealthOS is now in production with active healthcare users.",
     ],
     blocks: [
       {
         label: "My role",
-        body: "Founder and technical architect. I own the architecture end to end — the multi-tenant model, the offline-first data and synchronization strategy, workflow and role separation, the security model, and the infrastructure and deployment design — and I set implementation priorities and release direction. I also contribute directly to development, testing, deployment, and technical troubleshooting.",
+        body: "Founder and technical architect. I identified the problem, decided what to build, and own the architecture end to end — the multi-tenant model, the offline-first data and synchronization strategy, workflow and role separation, the security model, and the infrastructure and deployment design. I set implementation priorities and release direction, contribute directly to development and deployment, and iterate on the system as it runs in production.",
       },
     ],
     technicalFocus: [
@@ -100,7 +107,7 @@ export const projects: Project[] = [
       "Cloud deployment and DNS architecture",
       "Healthcare billing, HMO, pharmacy, and inventory workflow design",
     ],
-    status: "Active development · First pilot client onboarded",
+    status: "In production · Active healthcare users",
     tags: [
       "Systems Architecture",
       "Flutter",
@@ -143,31 +150,35 @@ export const projects: Project[] = [
   },
   {
     id: "dustid",
-    title: "Dustid — CTO, Engineering Leadership & Architecture",
+    title: "Dustid — Building the Engineering Function from the Ground Up",
     summary: [
       "Dustid is a UK technology startup developing an addressless phonebook and digital identity product.",
-      "I joined as CTO and built out the technical function, taking it from a small backend team to a cross-functional product organisation covering backend, frontend, UI/UX, QA, cybersecurity, and project management — and owning the architecture, security, and delivery decisions across it.",
+      "I joined as CTO when the technical side was a small backend team. The job was not only to lead engineers but to build the organisation they worked in: the structure, responsibilities, delivery practices, hiring, and security baseline needed for a cross-functional product team covering backend, frontend, UI/UX, QA, cybersecurity, and project management.",
     ],
     blocks: [
       {
         label: "My role",
-        body: "I led the technical function: system architecture and design review, the security and access-control model, engineering structure and process, product planning, delivery oversight, and release coordination across a distributed team.",
+        body: "I led the technical function and owned the architecture, security, and delivery decisions across it, while mentoring the engineers working inside it.",
       },
       {
-        label: "Scope of responsibility",
+        label: "What I built",
         items: [
-          "Architecture review and system design decisions",
-          "Security review and access-control design",
-          "Technical and product oversight across the engineering function",
-          "Engineering team structure, process design, and coordination",
-          "Product planning, delivery supervision, and release coordination",
-          "Oversight of product initiatives, including the Chrome extension project",
-          "Technical recruitment and interviewing",
-          "Collaboration across engineering, design, QA, and project management",
+          "Team construction across engineering, design, QA, and security",
+          "Technical organisation design: roles, responsibilities, and ownership",
+          "System architecture and design review",
+          "Mentorship of engineers across the distributed team",
+          "Interviewed 70+ candidates and helped shape hiring and onboarding across the technical organisation",
+          "Delivery structure: planning, supervision, and release coordination",
+          "Security and engineering standards, including the access-control model",
+          "Delivery under this structure included a Chrome extension, from requirements through in-browser testing and release",
         ],
       },
     ],
-    note: "Technical hiring was one part of the role: I interviewed more than 70 candidates and supported a distributed team that grew past 30 contributors during the engagement.",
+    note: "Helped grow the technical organisation from an early backend team into a 30+ person cross-functional group spanning engineering, product, QA, design and security.",
+    quote: {
+      text: "He is not a consultant. He is a builder.",
+      attribution: "Michael Livingstone, Founder & CEO, Dustid",
+    },
     tags: [
       "CTO Leadership",
       "Architecture",
@@ -178,91 +189,71 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "ai-agent",
-    title: "AI Research and Decision Agent",
+    id: "dialectica",
+    title: "Dialectica — Production Agentic Research & Execution System",
     summary: [
-      "An AI-assisted research system for a blockchain-based decision and truth-market product. The agent collected and evaluated claims, used retrieval and language-model workflows to interpret evidence, and carried the result through to on-chain operations.",
+      "Dialectica researches claims in a blockchain prediction market and, where the evidence supports it, acts on them with real on-chain transactions. It monitors the claim lifecycle, interprets each claim into a structured predicate with an LLM, retrieves price data or web evidence, decides, and then executes.",
+      "The engineering challenge was not making an LLM call tools; it was making autonomous execution reliable and safe enough for production, where a wrong or duplicated action costs money.",
     ],
     blocks: [
       {
         label: "My role",
-        body: "I architected and delivered the system end to end — agent orchestration and retrieval design, the language-model workflows, the blockchain integration, and the production hardening and hosting that kept it running after handover.",
+        body: "I architected and delivered the system end to end: the stateful agent workflow, retrieval and LLM interpretation, the decision guardrails, wallet and transaction execution, persistence, and failure handling.",
       },
       {
-        label: "Architecture & contribution",
+        label: "Making execution safe",
         items: [
-          "System architecture and delivery",
-          "Research-agent orchestration and workflows",
-          "Retrieval-augmented generation",
-          "LLM-based interpretation and structured output",
-          "Wallet and blockchain interactions",
-          "Encrypted rounds and challenge cycles",
-          "Batch and multicall operations",
-          "Logging, failure handling, and production hardening",
-          "Deployment, hosting, and post-delivery remediation",
+          "Fail-closed decisions: missing evidence, invalid structured output, or an LLM error returns NO_BET, never a bet",
+          "Contract-state preflight guards before every transaction; missing preflight data fails closed",
+          "Multicall3 batching for read-heavy eligibility checks",
+          "Gas and nonce handling: pending nonces, EIP-1559 fields, estimation buffers, and receipt checks",
+          "RSA-OAEP encryption of votes before submission",
+          "Payout and refund sweep that finds settled claims and routes inconclusive outcomes to refund",
+          "Persisted claim, decision, and action state, with bounded retries and a poll loop that survives failed cycles",
         ],
       },
     ],
+    link: {
+      href: "https://github.com/VnsObi/Dialectica_bot",
+      label: "View the code on GitHub",
+    },
     tags: [
       "AI Agents",
       "RAG",
       "LLMs",
-      "Systems Architecture",
       "Python",
       "Blockchain",
-      "Automation",
-    ],
-  },
-  {
-    id: "chrome-extension",
-    title: "Chrome Extension — Product & Delivery Leadership",
-    summary: [
-      "I led the delivery of a Chrome extension from requirements and workflow definition through engineering coordination, testing, and release preparation.",
-    ],
-    blocks: [
-      {
-        label: "My role",
-        body: "Delivery lead. I translated the product requirement into technical tasks and workflows, coordinated implementation across contributors, reviewed progress, and resolved delivery blockers. A browser extension runs inside someone else's page and against its own backing services, so a large part of the work was verifying that it behaved correctly in the browser environment and against the services it depended on, rather than only in isolation.",
-      },
-    ],
-    tags: [
-      "Chrome Extensions",
-      "JavaScript",
-      "APIs",
-      "Product Leadership",
-      "QA",
-      "Delivery",
+      "Transaction Safety",
     ],
   },
   {
     id: "argus",
-    title: "Argus Protocol — Security Architecture & Risk Infrastructure",
+    title: "Argus — Authorization Infrastructure for Autonomous Systems",
     summary: [
-      "Argus Protocol is security infrastructure for blockchain software supply chains. It analyses package dependencies and propagates risk across the relationships between them, so that a problem in one package is visible in everything that depends on it.",
+      "Autonomous agents and onchain systems make decisions against dependencies and risk conditions that keep changing. Traditional authorization usually evaluates only the immediate request — so an action that was safe when approved can stop being safe before, or while, it runs.",
+      "Argus is my architectural response to that gap: infrastructure that constrains what autonomous systems are allowed to do, rather than another agent that does more.",
     ],
     blocks: [
       {
         label: "My role",
-        body: "I design the data model and risk architecture: how packages and their dependencies are crawled and modelled, how risk propagates recursively across the dependency graph, how each score can be traced back to the reason that produced it, and how the resulting state is stored, served, and visualised.",
+        body: "Founder and architect. I own the problem definition, the authorization and risk architecture, and the direction of the build.",
       },
     ],
     technicalFocus: [
-      "Dependency graph modelling and recursive risk propagation",
-      "Reason tracing, so a score can be explained rather than just reported",
-      "Rule-based security analysis",
-      "Package crawling and ingestion services",
-      "PostgreSQL and TypeORM database design",
-      "TypeScript and Node.js backend services",
-      "Sui blockchain data",
-      "Graph visualisation of connected packages and their risk states",
+      "Pre-execution authorization: actions are assessed before they run",
+      "Dependency-aware risk across the systems an action relies on",
+      "Continuous authorization rather than a one-time check",
+      "Invalidating an action when its underlying risk state changes",
+      "Explainable controls, so every decision can be traced to its reason",
     ],
+    status: "In active development",
+    statusTone: "building",
     tags: [
       "Security Architecture",
-      "Graph Systems",
+      "Authorization",
+      "Risk Graphs",
+      "Autonomous Systems",
       "TypeScript",
-      "Node.js",
-      "PostgreSQL",
-      "Sui",
     ],
   },
 ];
@@ -281,7 +272,7 @@ export const experience: Role[] = [
     title: "Founder & CTO",
     period: "2026–Present",
     description:
-      "Architect and deliver technology products for healthcare and operationally complex organisations, owning system design, infrastructure, and security alongside technical product direction. Current work includes HealthOS, cloud infrastructure, internal business systems, automation, and technical consulting.",
+      "Architect and deliver technology products for healthcare and operationally complex organisations, owning system design, infrastructure, and security alongside technical product direction. Current work includes HealthOS, now in production with active healthcare users, cloud infrastructure, internal business systems, automation, and technical consulting.",
     focus: [
       "Systems architecture",
       "Product engineering",
@@ -342,18 +333,18 @@ export const capabilities: Capability[] = [
   {
     title: "Systems & Solutions Architecture",
     description:
-      "Designing end-to-end technical systems across software, infrastructure, integrations, security, deployment, data, and operational workflows.",
+      "The umbrella for everything below: designing and owning complex systems end to end — software, infrastructure, integrations, security, data, and the operational workflows they serve. The areas below are the parts of the system I work across, not separate specialisms.",
     lead: true,
   },
   {
     title: "Technical Leadership",
     description:
-      "Turning product and business goals into technical plans, coordinating engineering disciplines, reviewing technical decisions, and driving delivery.",
+      "Turning product and business goals into technical plans, building engineering structure, reviewing technical decisions, and driving delivery.",
   },
   {
     title: "Product Engineering",
     description:
-      "Building and shipping web, mobile, backend, API, database, integration, and AI-enabled products.",
+      "Building and shipping web, mobile, backend, API, database, and integration work for products that run in production.",
   },
   {
     title: "Cloud & Infrastructure",
@@ -368,12 +359,7 @@ export const capabilities: Capability[] = [
   {
     title: "AI & Agent Systems",
     description:
-      "Building AI-enabled workflows using LLMs, RAG, tool use, structured outputs, automation, agent systems, and external integrations.",
-  },
-  {
-    title: "MCP & Tool Integration",
-    description:
-      "Working with Model Context Protocol concepts and tool-connected AI systems that can retrieve context, call services, and perform controlled actions.",
+      "Building agentic systems with LLMs, RAG, tool use and MCP, structured outputs, and guarded execution — so they can call services and act safely in production.",
   },
 ];
 
@@ -445,29 +431,32 @@ export const contribute = [
   {
     title: "Systems Architecture",
     description:
-      "I design practical end-to-end systems across software, infrastructure, security, data, integrations, and deployment.",
+      "Design and own complex systems from requirements through production.",
   },
   {
     title: "Technical Leadership",
     description:
-      "I lead technical delivery, coordinate engineering disciplines, review architecture and implementation decisions, and help teams move from ambiguity to execution.",
+      "Build teams, engineering structure, standards, and delivery capability.",
   },
   {
     title: "Product Engineering",
-    description:
-      "I build and improve web, mobile, backend, AI-enabled, and operational products, with attention to how the entire system behaves in production.",
+    description: "Own high-impact product problems end to end.",
   },
   {
     title: "Infrastructure & Security",
     description:
-      "I design and improve production infrastructure with reliability, access control, observability, security, and operational resilience in mind.",
+      "Build the operational and security foundations those systems depend on.",
   },
 ];
 
 export const contact = {
-  heading: "Let's Work Together",
+  heading: "Interested in Working Together?",
   paragraphs: [
-    "I'm open to technical architecture, systems and solutions architecture, technical leadership, product engineering, fractional CTO, and selected hands-on software opportunities.",
-    "If you're building a serious product or technical platform and need someone who can connect architecture, code, infrastructure, security, delivery, and business requirements, I'd be glad to hear from you.",
+    "I'm open to joining a team — in roles such as Staff or Founding Engineer, Technical Architect, Head of Engineering, or CTO — and to selected company and project work.",
+    "If you're building a serious product and need someone who can take a hard problem from definition to production, and build the team around it, I'd be glad to hear from you.",
+  ],
+  actions: [
+    { label: "Discuss a Role", subject: "Discussing a role" },
+    { label: "Discuss a Project", subject: "Discussing a project" },
   ],
 };
