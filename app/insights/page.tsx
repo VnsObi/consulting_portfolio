@@ -1,8 +1,12 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import { getSortedPostsData } from "@/lib/posts";
 import { ArrowLeft } from "lucide-react";
+import { getInsights } from "@/lib/insights";
+import InsightIndex from "@/components/insights/InsightIndex";
+
+// New articles published in Sanity appear within five minutes, without a redeploy.
+export const revalidate = 300;
 
 export const metadata = {
   title: "Insights | Evans Obi",
@@ -13,8 +17,8 @@ export const metadata = {
   },
 };
 
-export default function InsightsArchive() {
-  const allPosts = getSortedPostsData();
+export default async function InsightsArchive() {
+  const cards = await getInsights();
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -41,44 +45,7 @@ export default function InsightsArchive() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {allPosts.map((post) => (
-              <Link
-                key={post.id}
-                href={`/insights/${post.id}`}
-                className="group flex flex-col p-8 bg-white rounded-xl border border-slate-200 hover:border-slate-300 transition-all hover:shadow-lg h-full"
-              >
-                <div className="flex items-center gap-3 text-sm text-slate-400 mb-4">
-                  <time dateTime={post.date}>{post.date}</time>
-                  <span aria-hidden="true">•</span>
-                  <span>{post.readTime}</span>
-                </div>
-                <h2 className="text-xl font-bold text-deep-slate mb-3 group-hover:text-midnight-blue transition-colors">
-                  {post.title}
-                </h2>
-                <p className="text-slate-600 leading-relaxed mb-6 flex-grow">
-                  {post.summary}
-                </p>
-
-                {post.tags && (
-                  <ul className="flex flex-wrap gap-2 mb-5">
-                    {post.tags.map((tag) => (
-                      <li
-                        key={tag}
-                        className="px-2.5 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-full"
-                      >
-                        {tag}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-
-                <span className="text-midnight-blue font-semibold text-sm group-hover:underline">
-                  Read article &rarr;
-                </span>
-              </Link>
-            ))}
-          </div>
+          <InsightIndex cards={cards} />
         </div>
       </main>
       <Footer />

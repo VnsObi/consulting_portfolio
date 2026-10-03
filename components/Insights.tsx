@@ -3,13 +3,12 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import type { PostData } from "@/lib/posts";
+import type { InsightCard as Card } from "@/lib/insight-format";
+import InsightCard from "@/components/insights/InsightCard";
 
-interface InsightsProps {
-  posts: PostData[];
-}
+export default function Insights({ cards }: { cards: Card[] }) {
+  if (cards.length === 0) return null;
 
-export default function Insights({ posts }: InsightsProps) {
   return (
     <section className="py-24 bg-alabaster" id="insights">
       <div className="max-w-7xl mx-auto px-6">
@@ -19,7 +18,8 @@ export default function Insights({ posts }: InsightsProps) {
               Insights
             </h2>
             <p className="text-lg text-slate-600">
-              Perspectives on technology strategy, operations, and resilience.
+              The engineering principles underneath the work — written from
+              systems I have actually shipped.
             </p>
           </div>
           <Link
@@ -30,50 +30,17 @@ export default function Insights({ posts }: InsightsProps) {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {posts.map((post, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {cards.map((card, index) => (
             <motion.div
-              key={post.id}
+              key={card.slug}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -5 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.4 }}
-              className="group cursor-pointer h-full"
+              className="h-full"
             >
-              <Link
-                href={`/insights/${post.id}`}
-                className="block p-8 bg-white rounded-xl border border-slate-200 hover:border-slate-300 hover:shadow-xl transition-all duration-300 h-full flex flex-col"
-              >
-                <div className="flex items-center gap-3 text-sm text-slate-400 mb-4 font-medium uppercase tracking-wide">
-                  <span>{post.date}</span>
-                  <span>•</span>
-                  <span>{post.readTime}</span>
-                </div>
-                <h3 className="text-xl font-bold text-deep-slate mb-3 group-hover:text-midnight-blue transition-colors">
-                  {post.title}
-                </h3>
-                <p className="text-slate-600 leading-relaxed mb-6 flex-grow">
-                  {post.summary}
-                </p>
-
-                {post.tags && (
-                  <ul className="flex flex-wrap gap-2 mb-5">
-                    {post.tags.map((tag) => (
-                      <li
-                        key={tag}
-                        className="px-2.5 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-full"
-                      >
-                        {tag}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-
-                <div className="text-midnight-blue font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
-                  Read Article <ArrowRight size={16} />
-                </div>
-              </Link>
+              <InsightCard card={card} />
             </motion.div>
           ))}
         </div>

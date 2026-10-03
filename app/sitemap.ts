@@ -1,14 +1,19 @@
 import { MetadataRoute } from "next";
-import { getSortedPostsData } from "@/lib/posts";
+import { getInsights } from "@/lib/insights";
+import { PERSONAL_SITE } from "@/lib/insight-format";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://evansobi.systems";
+export const revalidate = 3600;
 
-  // Get all posts for dynamic routes
-  const posts = getSortedPostsData();
-  const postUrls = posts.map((post) => ({
-    url: `${baseUrl}/insights/${post.id}`,
-    lastModified: new Date(post.date),
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const baseUrl = PERSONAL_SITE;
+
+  // Articles whose original lives on VNSIS belong in VNSIS's sitemap, not this one.
+  const insights = (await getInsights()).filter(
+    (card) => card.canonicalSite !== "vnsis",
+  );
+  const insightUrls = insights.map((card) => ({
+    url: `${baseUrl}/insights/${card.slug}`,
+    lastModified: new Date(card.updatedAt),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
@@ -26,6 +31,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
     },
-    ...postUrls,
+    ...insightUrls,
   ];
 }
